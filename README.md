@@ -8,8 +8,8 @@ for the designs):
 
 * <img src="assets/wikipedia_design_templates/01-Cover.jpg" alt="cover" width="200">
 * <img src="assets/wikipedia_design_templates/02-Contents.jpg" alt="Contents" width="200">
-* <img src="assets/wikipedia_design_templates/02-Article.jpg" alt="Article" width="200">
-* <img src="assets/wikipedia_design_templates/02-FontGuidelines.jpg" alt="Font Guidelines" width="200">
+* <img src="assets/wikipedia_design_templates/03-Article.jpg" alt="Article" width="200">
+* <img src="assets/wikipedia_design_templates/04-FontGuidelines.jpg" alt="Font Guidelines" width="200">
  
 ## Installation
 
