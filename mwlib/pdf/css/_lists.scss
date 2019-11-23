@@ -1,0 +1,8 @@
+ul, ol {
+  margin-left: $list-indent;
+  text-align: left;
+}
+
+* + ul {
+  margin-top: $small_vertical_margin;
+}

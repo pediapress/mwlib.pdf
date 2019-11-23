@@ -1,0 +1,22 @@
+$k05: #f2f2f2;
+$k05: rgba(0,0,0,0.05);
+$k07: rgba(0,0,0,0.07);
+$k10: #ededed;
+$k10: cmyk(0,0,0,0.1);
+$k20: #dadada;
+$k20: cmyk(0,0,0,0.2);
+$k30: #c6c6c6;
+$k30: cmyk(0,0,0,0.3);
+
+$head-rule-size: .5pt; 	    /* thickness of header rule */
+$foot-rule-size: $head-rule-size;		/* thickness of footer rule */
+$figure-border-width: 2pt;
+
+$list-indent: 32pt;
+
+$large_vertical_margin: 32pt;
+$medium_vertical_margin: 16pt;
+$small_vertical_margin: 4pt;
+
+$column-width: 4 * $base-column-width + 3 * $gutter-width;
+$page-width: 12 * $base-column-width + 11 * $gutter-width;

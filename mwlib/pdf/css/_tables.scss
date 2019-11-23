@@ -1,0 +1,112 @@
+table {
+  border-collapse: collapse;
+  th {
+    background-color: $k10;
+    text-align: left;
+  }
+  th, td {
+    page-break-inside: avoid;
+  }
+  margin-bottom: $medium_vertical_margin;
+}
+
+table.short-table {
+  page-break-inside: avoid;
+}
+
+* + table {
+  margin-top: $small_vertical_margin;
+
+  &.rotated-table {
+    margin-top: 0;
+    page: wide;
+    width: 100%;
+  }
+}
+
+h1 + table.table_noCSS, h2 + table.table_noCSS {
+  margin-top: 0;
+}
+
+//table.infobox,
+table.navbox,
+table.wikitable,
+table.toccolours,
+table.pp_border_table {
+  td, th {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 0 $gutter-width/2;
+    border-collapse: collapse;
+    background-color: $k05;
+    vertical-align: middle;
+    font-size: 7pt;
+
+    p {
+      font-size: 7pt;
+    }
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  th {
+    background-color: $k10;
+  }
+
+  caption {
+    font-family: $sans-serif-stack;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 7pt;
+    line-height: 9pt;
+    text-align: left;
+    position: relative;
+    caption-side: top;
+    margin-bottom: $small_vertical_margin;
+  }
+
+}
+
+tr.pp_nobreak_after {
+  page-break-after: avoid;
+}
+
+tr.pp_nobreak_before {
+  page-break-before: avoid;
+}
+
+table.infobox {
+  //float: right ;
+}
+
+table.mbox-small {
+  .mbox-image {
+    padding: $gutter-width/2;
+  }
+
+  .mbox-text {
+    vertical-align: middle;
+    padding: $gutter-width/2 $gutter-width/2 $gutter-width/2 0;
+  }
+}
+
+* + table.pullquote {
+  margin-top: $medium_vertical_margin;
+  margin-bottom: $medium_vertical_margin;
+}
+
+article .mw-parser-output > table.right-floated-table {
+  margin-left: $gutter-width;
+  margin-right: 0;
+  margin-top: $small_vertical_margin;
+  margin-bottom: $medium_vertical_margin;
+}
+table.over-wide {
+  margin-bottom: $small_vertical_margin;
+}

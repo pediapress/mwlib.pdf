@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-18 10:23+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: mwlib/html/generator/contributors.py:19
+msgid "Article Sources and Contributors"
+msgstr "Sources et contributeurs de l’article"
+
+#: mwlib/html/generator/contributors.py:26
+#: mwlib/html/generator/contributors.py:53
+msgid "Source:"
+msgstr "Source:"
+
+#: mwlib/html/generator/contributors.py:28
+#: mwlib/html/generator/contributors.py:57
+msgid "Contributors:"
+msgstr "Contributeurs"
+
+#: mwlib/html/generator/contributors.py:42
+msgid "Image Sources, Licenses and Contributors"
+msgstr "Source des images, licences et contributeurs"
+
+#: mwlib/html/generator/contributors.py:49
+msgid "unknown"
+msgstr "inconnu"
+
+#: mwlib/html/generator/contributors.py:55
+msgid "License:"
+msgstr "Licence:"
+
+#: mwlib/html/generator/contributors.py:68
+msgid "see page"
+msgstr "voir la page"
+
+#: mwlib/html/generator/contributors.py:79
+msgid "anonymous edits"
+msgstr "modifications anonymes"

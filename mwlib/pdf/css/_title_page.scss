@@ -1,0 +1,61 @@
+#title_page {
+  .wikipedia_logo {
+    width: 113.4pt;
+    height: 18pt;
+    position: absolute;
+    top: 37pt;
+    left: 13pt + 20pt;
+  }
+  .pediapress_logo {
+    width: 40pt;
+    height: 40pt;
+    position: absolute;
+    top: 705pt;
+    left: 458pt;
+  }
+  h1 {
+    font-size: 50pt;
+    line-height: 1em;
+    font-weight: bold;
+    margin-top: 112pt;
+    padding-left: 20pt + 20pt;
+    border: none;
+  }
+  h2 {
+    font-size: 16pt;
+    font-weight: bold;
+    padding-left: 20pt + 20pt;
+  }
+  .horizontal-line {
+    width: 50pt;
+    height: 2pt;
+    margin-top: 20pt;
+    margin-left: 40pt;
+    border-bottom: 2px solid;
+  }
+  ul.info_line {
+    position: absolute;
+    top: 715pt;
+    left: 20pt + 20pt;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline;
+      font-style: italic;
+      font-size: 12pt;
+      &::after {
+        content: " • ";
+        font-weight: bold;
+        //padding: 0 0 0 5pt;
+      }
+      &:last-child {
+        &::after {
+          content: "";
+        }
+      }
+      &#total_pages::before {
+        content: counter(pages);
+      }
+    }
+  }
+}

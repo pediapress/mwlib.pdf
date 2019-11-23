@@ -1,0 +1,50 @@
+.infobox-wrapper {
+  width: $column-width;
+  float: right;
+  background-color: $k07;
+  page-break-inside: auto;
+  table.infobox {
+    width: 100%;
+    table {
+      width: auto;
+    }
+    border-collapse: collapse;
+    page-break-inside: auto;
+    tr:nth-child(even) {
+      background: transparent;
+    }
+    tr:nth-child(odd) {
+      background: $k07;
+    }
+    th, td {
+      margin: 0;
+      padding: $gutter-width/4 $gutter-width/2;
+      background: none;
+      border-top: 0.25pt solid white;
+      width: auto;
+    }
+    td.contains-img-wide {
+      border-top: none;
+      padding: 0;
+      div {
+        max-width: $column-width;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+      }
+      span, a {
+        display: inline;
+      }
+      a.image {
+        display: block;
+        img.infobox-img-wide {
+          display: block;
+          max-width: $column-width;
+          height: auto;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

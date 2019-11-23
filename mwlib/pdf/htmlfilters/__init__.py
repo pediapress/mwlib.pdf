@@ -1,0 +1,91 @@
+#!/usr/bin/env python
+
+from mwlib.pdf.htmlfilters import (
+    misc,
+    images,
+    infobox,
+    typography,
+    tables,
+    sections,
+    lists,
+    tex,
+    blockquotes,
+    lang_tools,
+    special,
+    sizetools,
+)
+
+
+def filter_tree(article):
+    # article filters (usually require access to the env object or other metadata)
+    for filter_function in [
+        misc.filter_content,
+        misc.add_article_title,
+        lang_tools.map_class_to_style,
+        lang_tools.map_classes,
+        images.fix_image_src,
+        images.check_size,
+    ]:
+        filter_function(article)
+
+    # tree filters (operate only on the dom-tree)
+    for filter_function in [
+        misc.remove_nodes_and_content,
+        tables.remove_single_cell_tables,
+        sections.remove_empty,
+        misc.transform_width_and_height_attributes_to_style,
+        misc.markup_maps,
+        misc.remove_figure_colon,
+        tables.remove_style_sizes,
+        tables.remove_styles_in_floats,
+        tables.mark_table_header,
+        tables.bold_tablenote_marker,
+        tables.markup_short_tables,
+        images.set_size_attributes,
+        images.strip_height,
+        images.fix_galleries,
+        images.fix_links_on_images,
+        images.remove_images_with_class_remove,
+        misc.rewrite_links,
+        tex.transform2svg,
+        tex.remove_mathml,
+        images.remove_missing,
+        tables.identify_infoboxes,
+        images.set_figure_div_size,
+        tables.remove_infobox_divs,
+        tables.add_infobox_wrapper,
+        infobox.clean_infobox_inner_width,
+        infobox.clean_infobox_padding,
+        infobox.clean_infobox_background_color,
+        tables.improve_table_breaks,
+        tables.remove_multicolumn,
+        tables.remove_explicit_multicolumn,
+        tables.remove_pullquote_margin_styles,
+        tables.markup_floated_tables,
+        tables.remove_styles,
+        images.fix_abspos_overlays,
+        images.scale_inline,
+        images.limit_size,
+        images.fix_thumbs,
+        images.mark_img_container,
+        images.move_caption_below_image,
+        images.remove_img_style_size,
+        images.fix_img_style_size_tmulti,
+        images.fix_image_tables,
+        images.fix_col8_low_ppi,
+        images.add_class_to_infobox_wide_images,
+        images.remove_low_ppi,
+        images.remove_responsive_styles,
+        images.optimize_maps,
+        typography.fix_sizes,
+        typography.add_center_class,
+        typography.remove_p_padding,
+        lists.merge_single_element_lists,
+        lists.mark_inline,
+        blockquotes.remove_container,
+        special.fix_election_charts,
+        misc.clean,
+        sections.change_references_id_to_class,
+    ]:
+        filter_function(article.dom)
+    return

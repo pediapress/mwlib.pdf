@@ -1,0 +1,16 @@
+.pp_chapter {
+  h2.page-break-before, .page-break-before + h2,
+  .pp-table.page-break-before, .page-break-after + .pp-table,
+  .thumb.page-break-before, .page-break-after + .thumb {
+    margin-top: 0;
+  }
+}
+
+.pp_article {
+  h1.page-break-before, .page-break-after + h1,
+  h2.page-break-before, .page-break-after + h2,
+  .pp-table.page-break-before, .page-break-after + .pp-table,
+  .thumb.page-break-before, .page-break-after + .thumb {
+    margin-top: -$large_vertical_margin;
+  }
+}

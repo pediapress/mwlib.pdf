@@ -1,0 +1,253 @@
+$serif-stack: pp-serif, prince-no-fallback;
+$sans-serif-stack: pp-sans-serif, prince-no-fallback;
+
+$cjk-range: U+3000-4DFF, U+4E00-9FCC, U+3400-4DB5, U+20000-2A6D6, U+2A700-2B734, U+2B740-2B81D,
+U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+$devanagari-range: U+0900-097F;
+$japanese-range: U+3040-30FF, U+4E00-9FBF;
+$cyrillic-range: U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F, U+1C80-1C8F, U+1D2B-1D78, U+FE2E-FE2F;
+$arabic-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+1EE00-1EEFF, U+1EC70-1ECBF, U+10E60-10E7F;
+$bengali-range: U+0980-09FF;
+
+@font-face {
+  font-family: pp-serif; /* Chinese */
+  unicode-range: $cjk-range;
+  src: prince-lookup("Noto Serif CJK SC");
+}
+
+@font-face {
+  font-family: pp-sans-serif; /* Chinese */
+  unicode-range: $cjk-range;
+  src: prince-lookup("Noto Sans CJK SC");
+}
+
+@font-face {
+  font-family: pp-serif;
+  unicode-range: $devanagari-range;
+  src: prince-lookup("Noto Serif Devanagari");
+}
+
+@font-face {
+  font-family: pp-sans-serif;
+  unicode-range: $devanagari-range;
+  src: prince-lookup("Noto Sans Devanagari");
+}
+
+@font-face {
+  font-family: pp-serif;
+  unicode-range: $bengali-range;
+  src: prince-lookup("Noto Serif Bengali");
+}
+
+@font-face {
+  font-family: pp-sans-serif;
+  unicode-range: $bengali-range;
+  src: prince-lookup("Noto Sans Bengali");
+}
+
+
+@font-face {
+  font-family: pp-serif;
+  unicode-range: $cyrillic-range;
+  src: prince-lookup("Noto Serif");
+}
+
+@font-face {
+  font-family: pp-sans-serif;
+  unicode-range: $cyrillic-range;
+  src: prince-lookup("Noto Sans");
+}
+
+@font-face {
+  font-family: pp-serif;
+  unicode-range: $arabic-range;
+  src: prince-lookup("Noto Sans Arabic");
+}
+
+@font-face {
+  font-family: pp-sans-serif;
+  unicode-range: $arabic-range;
+  src: prince-lookup("Noto Sans Arabic");
+}
+
+@font-face {
+  font-family: pp-serif;
+  src: local("Charis SIL");
+}
+
+@font-face {
+  font-family: pp-sans-serif;
+  src: local("Lato");
+}
+
+// ******************************
+// modular scale:
+// ******************************
+// ratio: 1.5
+// base1: 10.5pt
+// base2: 12.5pt
+body {
+  font-size: 10.5pt;
+  line-height: 16pt;
+  font-weight: 300;
+  font-family: $sans-serif-stack;
+  // prince-hyphenate-patterns: url('dehyphn-x-2014-05-21.pat');
+  hyphens: auto;
+}
+
+p, table, li, dl, pre, th, td {
+  font-size: 10.5pt;
+  line-height: 16pt;
+}
+
+* + p {
+  margin-top: 8pt;
+}
+
+.mw-parser-output {
+  > p {
+    text-align: left;
+  }
+
+  p:first-of-type {
+    font-weight: normal;
+  }
+
+}
+
+.center p {
+  text-align: center;
+}
+
+A {
+  color: inherit;
+  text-decoration: none;
+}
+
+.two-column {
+  column-count: 2;
+  column-fill: auto;
+  column-gap: $gutter-width;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 8pt;
+  page-break-after: avoid;
+  font-weight: bold;
+}
+
+h1, h2, h3, h4 {
+  hyphens: none;
+  font-family: $serif-stack;
+}
+
+h5, h6 {
+  font-family: $sans-serif-stack;
+  font-weight: bold;
+  margin: 6pt 0 0;
+}
+
+h1 {
+  font-size: 23.625pt;
+  line-height: 26px;
+  font-weight: bold;
+  padding-top: 8pt;
+  border-top: 2pt solid black;
+  margin-bottom: 56pt;
+  column-span: all;
+  clear: both;
+}
+
+h2 {
+  font-size: 15.75pt;
+  line-height: 18pt;
+  margin: 10pt 0 3pt;
+}
+
+h3 {
+  font-size: 12.5pt;
+  line-height: 14pt;
+  margin: 10pt 0 0;
+}
+
+h4 {
+  font-size: 10.5pt;
+  line-height: 14pt;
+}
+
+h5 {
+  font-size: 9pt;
+  line-height: 11pt;
+}
+
+h6 {
+  font-size: 7pt;
+  line-height: 9pt;
+}
+
+article {
+  > h1 {
+    string-set: chapter-title content();
+    page-break-before: always;
+  }
+
+  counter-reset: h2, h3;
+
+  h2 {
+    counter-increment: h2;
+    counter-reset: h3;
+  }
+
+  h3 {
+    counter-increment: h3;
+  }
+
+  h2::before {
+    //content: counter(h2) ". ";
+  }
+
+  h3::before {
+    //content: counter(h2) "." counter(h3) " ";
+  }
+}
+
+.infobox, div.thumbcaption, .gallerybox .gallerytext, .reflist, ol.references {
+  &, & p, & td, & th, & li, & dd {
+    font-family: $sans-serif-stack;
+    font-size: 7pt;
+    line-height: 9pt;
+  }
+}
+
+.gallerybox .gallerytext p {
+  font-weight: 300;
+  font-style: italic;
+}
+
+article.contributors {
+  h1 {
+    //font-size: 2.369em;
+  }
+
+  h2, p {
+    font-size: 7pt;
+    margin-bottom: 0;
+    line-height: 1rem;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  .label {
+    font-style: italic;
+  }
+}
+
+.references {
+  clear: both;
+
+  &::before {
+    clear: both;
+  }
+}

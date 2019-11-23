@@ -1,0 +1,833 @@
+/* ======================================================================
+   Hypothetical MathML StyleSheet
+   demonstrating how MathML might be handled by CSS3
+   Bruce Miller, Tim Boland,
+   Incorporating ideas from David Carlisle.
+   ====================================================================== */
+
+/* ======================================================================
+   General comments
+   NEED: attr(attname) to be allowed in ALL property values.
+         This is used pervasively here.
+   NEED: extensions to attr; at least: attr(../attname)
+         to get the attribute of parent.
+   NEED(?): access to properties from CSS.
+         Eg. A handy pseudo-class selector:
+           mfrac[property(mathdisplaystyle)='true']...
+   QUESTION: Is it `expensive' to add new properties that are inheritted
+         in simple ways?  (ie. do display's that don't specifically
+         understand the property pass-them through?)
+*/
+/* retrieved from http://math.nist.gov/~BMiller/mathml-css/ */
+
+math { display: inline; margin-left: 0.2em; margin-right: 0.2em;
+       font-family:serif; font-weight:normal; font-style:normal; }
+math[display="block"] { display: block; margin: 1em; }
+math[mode="display"]  { display: block; margin: 1em; }
+
+/************************************************************************
+ ************************************************************************
+ **                 Section 3. Presentation Markup                     **
+ ************************************************************************
+ ************************************************************************/
+
+/************************************************************************
+ ************************************************************************
+ **                  Section 3.2. Token Elements                       **
+ ************************************************************************
+ ************************************************************************/
+
+/* NOTE: We assume the UA handles whatever mappings are needed to get
+     full unicode coverage for all standard fonts.
+   NOTE: MathML-specific character entity names are NOT covered here.
+*/
+
+/* ======================================================================
+     3.2.2. Mathematics style attributes common to token elements
+   ======================================================================
+    mathvariant    = (normal | bold | italic | bold-italic | double-struck
+    		      | bold-fraktur | script | bold-script | fraktur
+		      | sans-serif | bold-sans-serif | sans-serif-italic
+		      | sans-serif-bold-italic | monospace)
+    mathsize       = ( small | normal | big | number v-unit )
+    mathcolor      = (#rgb | #rrggbb | html-color-name)
+    mathbackground = (#rgb | #rrggbb | html-color-name)
+   ====================================================================== */
+
+/* NEED: We need 3 additional fonts: double-struck, script and fraktur.
+         Should these be additional `generic' fonts?
+   For now, I assume you have the Mathematica 4.2 fonts are installed.
+     Mathematica5 => script
+     Mathematica6 => fraktur
+     Mathematica7 => double-struck
+*/
+/* I think we want to set the (equivalent to) `normal' mathvariant on math itself,
+   and NOT on any other token elements (with the exeption of mi special cases),
+   unless they explicitly request mathvariant; otherwise, they won't inherit style
+   from mstyle. Similarly, we shouldn't use the shorthand font property, so as not
+   to reset the inherited size. */
+
+*[mathvariant='normal']                 { font-family:serif; font-weight:normal; font-style:normal;}
+*[mathvariant='bold']                   { font-family:serif; font-weight:bold;   font-style:normal; }
+*[mathvariant='italic']                 { font-family:serif; font-weight:normal; font-style:italic; }
+*[mathvariant='bold-italic']            { font-family:serif; font-weight:bold;   font-style:italic; }
+*[mathvariant='double-struck']          { font-family:Mathematica7; font-weight:normal; font-style:normal;}
+*[mathvariant='bold-fraktur']           { font-family:Mathematica6; font-weight:bold;   font-style:normal;}
+*[mathvariant='script']                 { font-family:Mathematica5; font-weight:normal; font-style:normal;}
+*[mathvariant='bold-script']            { font-family:Mathematica5; font-weight:bold;   font-style:normal;}
+*[mathvariant='fraktur']                { font-family:Mathematica6; font-weight:normal; font-style:normal;}
+*[mathvariant='sans-serif']             { font-family:pp-sans-serif; font-weight:normal; font-style:normal;}
+*[mathvariant='bold-sans-serif']        { font-family:pp-sans-serif; font-weight:bold;   font-style:normal;}
+*[mathvariant='sans-serif-italic']      { font-family:pp-sans-serif; font-weight:normal; font-style:italic;}
+*[mathvariant='sans-serif-bold-italic'] { font-family:pp-sans-serif; font-weight:bold;   font-style:italic;}
+*[mathvariant='monospace']              { font-family:monospace;  font-weight:normal; font-style:normal;}
+
+
+/* NOTE: On sizing and scriptlevel.
+     The obvious means of approximating scriptlevel is to use relative
+     sizing (eg. font-size:71%). This makes incrementing/decrementing
+     scriptlevel easy (in both mstyle & script elements).  But it gives
+     no means of setting scriptlevel to a specific level in mstyle
+     (how common is this?).
+
+     An alternative explored here, is to use the named absolute sizes
+     to handle both scriptlevel and other sizing attributes.  The
+     correspondence with scriptlevel is:
+              0 => normal
+              1 => small
+              2 => x-small
+              3 => xx-small
+              * => xx-small  (?)
+     and with mathsize is
+          small => small
+	 normal => normal
+	    big => large
+     and it is easy for mstyle to set both specific levels and increment
+     them (at least by one!)
+
+     The disadvantages are that there are effectively only 4 scriptlevels
+     (enough for TeX!), and that the size increments aren't quite what
+     the MathML spec anticipated (71%) (OTOH, the increments may be better
+     for screen readability).
+
+     Any alternative that doesn't end up setting font-size (eg, introducing
+     scriptlevel as a new property) would require ALL boxes appearing in Math
+     to use this alternative mechanism to set font-size!!
+*/
+
+*[mathsize='small']  { font-size:small; }
+*[mathsize='normal'] { font-size:medium; }
+*[mathsize='big']    { font-size:large; }
+/* NOTE: Otherwise, it should be number v-unit
+   *[mathsize]          { font-size: attr(mathsize); }
+*/
+/* NOTE: MathML specifies color consistent with the CSS model, but need attr()
+  *[mathcolor]      { color: attr(mathcolor,color); }
+  *[mathbackground] { background-color: attr(mathbackground,color); }
+*/
+
+/* ======================================================================
+     3.2.2.1 Deprecated style attributes on token attributes */
+
+/* NOTE: Deprecated attributes should be easily translatable, given attr().
+  *[fontsize]  { font-size:attr(fontsize); }
+  *[fontweight]{ font-weight:attr(fontweight); }
+  *[fontstyle] { font-style:attr(fontstyle); }
+  *[fontfamily]{ font-family:attr(fontfamily); }
+  *[color]     { color:attr(color,color); }
+*/
+
+/* ======================================================================
+     3.2.3. Identifier (mi).
+   ======================================================================
+   <mi> pcdata </mi>
+   ====================================================================== */
+
+mi { display: inline; }
+
+/* NEED: a selector which distinguishes mi that contains 1 vs many chars.
+   NOTE: contains can take a keyword; From what set?
+   Perhaps it can be extended to somehow cover this need?
+mi:contains(single-char)  { font-family:serif; font-weight:normal; font-style:italic; }
+*/
+
+/* ======================================================================
+     3.2.4. Number (mn)
+   ======================================================================
+   <mn> pcdata </mn>
+   ====================================================================== */
+
+mn { display: inline; }
+
+/* ======================================================================
+     3.2.5. Operator, Fence, Separator or Accent (mo)
+   ======================================================================
+   <mo form      = ( prefix | infix | postfix )
+       fence     = ( true | false)
+       separator = ( true | false )
+       lspace    = ( number h-unit | namedspace )
+       rspace    = ( number h-unit | namedspace )
+       stretchy  = ( true | false )
+       symmetric = ( true | false)
+       maxsize   = ( number (v-unit|h-unit) | namedspace | infinity)
+       minsize   = ( number (v-unit|h-unit) | namedspace )
+       largeop   = ( true | false )
+       moveablelimits = ( true | false )
+       accent    = ( true | false )
+   > pcdata </mo>
+   ======================================================================
+   NOTE: How much of the operator dictionary can/needs to be covered?
+   NEED: IMHO, the most important feature is stretchy!
+    One possible model would require 2 `simple' extensions:
+      (1) A means to specify the size of a box saying that it would
+          grow to the height or width of it's parent.
+         (presumable depending on inline or block parent, resp?)
+      (2) A means to specify font-size such that it would stretch
+          to fill the containing box.  In the simplest case,
+          the UA would use scalable fonts, but could assemble
+          the glyphs from pieces internally if it desired.
+    NOTE: Interaction between displaystyle, largeop, moveablelimits ??
+*/
+
+mo { display: inline; }
+/* NOTE: Need generalized attr()
+  mo[lspace] { padding-left: attr(lspace); }
+  mo[rspace] { padding-right: attr(rspace); }
+*/
+
+/* NOTE: A simplistic Operator Dictionary could look like:
+  It would be preferable to say the content is exactly '(', not just that
+  it contains '('.
+  mrow>mo[contains('(')]:first-child { stretchy:true; }
+  mrow>mo[contains(')')]:last-child { stretchy:true; }
+*/
+
+/* ======================================================================
+     3.2.6. Text (mtext)
+   ======================================================================
+   <mtext> text </mtext>
+   ====================================================================== */
+
+mtext { display:inline; }
+
+/* ======================================================================
+     3.2.7. Space (mspace)
+   ======================================================================
+   <mspace width  = (number h-unit | namedspace)
+   	   height = (number v-unit)
+	   depth  = (number v-unit)
+	   linebreak = (auto | newline | indentingnewline | nobreak
+                        | goodbreak | badbreak)
+   />
+   ======================================================================
+   NOTE: How do we affect the baseline of a box?
+   NOTE: Can we guarantee space for empty element?
+         Generate content for it?
+ */
+
+mspace         { display: inline; }
+/* NOTE: Can we specify size of empty element? (uses attr() )
+  mspace[width]  { width: attr(width); }
+  mspace[height] { height: attr(height); }
+*/
+/* NOTE: Can the proposed calc be used this way?
+  mspace[depth]  { vertical-align: calc(- attr(depth)); }
+*/
+
+/* ======================================================================
+     3.2.8. String Literal (ms)
+   ======================================================================
+   <ms lquote = string
+       rquote = string
+   > text </ms>
+   ====================================================================== */
+ms                 { display:inline; }
+ms:before         { content:open-quote; }
+ms:after          { content:close-quote; }
+ms[lquote]:before { content:attr(lquote); }
+ms[rquote]:after  { content:attr(rquote); }
+
+/* ======================================================================
+     3.2.9. Accessing glyphs for characters from MathML (mglyph)
+   ======================================================================
+   <mglyph alt        = string
+   	   fontfamily = string
+	   index      = integer
+   />
+   ======================================================================
+   NOTE: this one seems unreasonable to handle; just punt with alt? */
+
+mglyph { content:attr(alt); }
+
+/************************************************************************
+ ************************************************************************
+ **             Section 3.3. General Layout Schemata                   **
+ ************************************************************************
+ ************************************************************************/
+
+
+/* ======================================================================
+     3.3.1. Horizontal group sub-expressions (mrow)
+   ======================================================================
+   <mrow> content... </mrow>
+   ====================================================================== */
+
+mrow { display: inline; }
+
+/* ======================================================================
+     3.3.2. Fractions (mfrac)
+   ======================================================================
+   <mfrac linethickness = (number [v-unit] | thin | medium | thick )
+   	  numalign      = (left | center | right)
+	  denomalign    = (left | center | right)
+	  bevelled      = (true | false)
+   > numerator denominator </mfrac>
+   ====================================================================== */
+
+/* NOTE: Worry about using border for significant things:
+         What if someone tries to outline the numerator?
+	 Aha: Security by obscurity!  Use the CSS3 generated content ::outside
+	 to put the border in a somewhat less accessible place.
+ 	 For example, something like:
+	 mfrac>*:first-child::outside { display:table-row; border-bottom-style:solid; }
+	 I also suspect that using ::outside to wrap children in a virtual element
+         with a specified display value would cause much fewer collisions.
+*/
+/* NOTE: I'm not entirely clear what's going on here; using display = inline-block/block
+   for frac & children, resp. would also seem to work, but in display contexts, seems
+   to make the frac full screen width.
+
+   NOTE: I'm not quite clear how to get a desirable vertical alignment of
+   the mfrac as a whole. It sounds like vertical-align:middle should
+   be in the ballpark (though not strictly correct)?  Seems to be ignored?
+   Also, an inline-table should have it's baseline as baseline of 1st row,
+   so that vertical-align:0.5ex would be right...
+*/
+
+mfrac { display:inline-table; margin:0.1em;  border-collapse:collapse;
+        text-align:center; vertical-align:middle;
+}
+/* Presumably for CSS3 we need:
+      vertical-align:0.6ex;
+      inline-box-align:1;
+*/
+mfrac>*  { display:table-row!important; }
+/* NOTE: Selectivity bug in Opera ???
+   The !important shouldn't be needed here, right???
+   (to overrule earlier rules like mn {display:inline; } ) */
+
+mfrac>*:first-child { border-bottom-style:solid; border-bottom-width:1pt; }
+
+mfrac[linethickness='0']>*:first-child      { border-bottom-width: 0; }
+mfrac[linethickness='thin']>*:first-child   { border-bottom-width: 0.5pt; }
+mfrac[linethickness='medium']>*:first-child { border-bottom-width: 1pt; }
+mfrac[linethickness='thick']>*:first-child  { border-bottom-width: 2pt; }
+mfrac[linethickness='1']>*:first-child      { border-bottom-width: 1pt; }
+mfrac[linethickness='2']>*:first-child      { border-bottom-width: 2pt; }
+mfrac[linethickness='3']>*:first-child      { border-bottom-width: 3pt; }
+mfrac[linethickness='4']>*:first-child      { border-bottom-width: 4pt; }
+
+/* NOTE: For arbitrary lengths, need generalized attr()
+  mfrac[linethickness]>*:first-child          { border-bottom-width: attr(../linethickness); }
+*/
+/* NOTE: For alignments, need generalized attr()
+  mfrac[numalign]>*:first-child  { text-align: attr(numalign); }
+  mfrac[denomalign]>* + * { text-align: attr(denomalign); }
+*/
+
+/* NOTE: Possible treatment for displaystyle?
+ mfrac[property(mathdisplaystyle) != 'true'] { font-size: smaller; }
+ mfrac:first-child { mathdisplaystyle:false }
+ mfrac:last-child  { mathdisplaystyle:false }
+*/
+
+/* NOTE: !important needed to override the unneeded !important in un-bevelled case! */
+mfrac[bevelled='true']                   { display:inline; }
+mfrac[bevelled='true']>*:first-child     { display:inline!important; position:relative; bottom:0.1em; border:none;}
+mfrac[bevelled='true']>*:first-child + * { display:inline!important; position:relative; bottom:-0.1em; }
+/* NOTE: should solidus be stretchy?  */
+mfrac[bevelled='true']>*:first-child + *:before { content: "\2044"; font-size:130%; padding-right:0.1em }
+
+/* ======================================================================
+     3.3.3. Radicals (msqrt, mroot)
+   ======================================================================
+   <msqrt> base </msqrt>
+   <mroot> base index </mroot>
+   ======================================================================
+   NOTE: See also menclose, particularly: menclose[notation='radical']
+   NOTE: using borders, which are too easily overridden by author and,
+     worse, can clash with each other (eg mfrac>mroot )
+   NEED: Something! These and menclose are a bit ad-hoc and the pieces
+     don't necessarily fit well when surds are generated.
+*/
+
+msqrt   { display: inline; }
+msqrt>*      { display:inline; border-top-style:solid; border-top-width:thin; padding: 0.2em;}
+/* NOTE: stretchy would be nice. */
+msqrt:before { content: "\221A"; font-size:120%; margin-right:-0.2em;}
+
+
+/* David's concoction => (base)^(1/index). */
+mroot        { display: inline; }
+mroot:before { content: "("; }
+/* mroot>*      { position:relative;  top: -.5em; font-size:smaller; display:inline-block; overflow:visible;}*/
+mroot>*      { position:relative;  top: -.5em; font-size:smaller; overflow:visible;}
+mroot>*:before { content: "1/("; }
+mroot>*:after  { content: ")"; }
+mroot>*:first-child:before { content: ""; }
+mroot>*:first-child:after { content: ")"; }
+mroot>*:first-child { display:inline; position:static; font-size: 100%; width: auto; }
+
+/* NOTE: Experiment with how the CSS3 Generated and Replaced Content Module
+         http://www.w3.org/TR/css3-content/
+         could allow rearranging the elements
+Something like this ? (yikes)
+
+mroot>*:first-child { content:""; }
+mroot>*:first-child::alternate { move-to:mroot-base; }
+mroot>*:first-child + * { font-size:smaller; vertical-align:super; }
+mroot>*:first-child + *::after { content pending(mroot-base); }
+
+msqrt>*:first-child + *::after::outside { display:inline; border-top: thin solid; padding: .2em; }
+msqrt>*:first-child + *::after::outside::before { content: "\221A"; font-size:120%; margin-right:-0.2em;}
+NOTE: stretchy would be nice.
+
+*/
+
+/* ======================================================================
+     3.3.4. Style Change (mstyle)
+   ======================================================================
+   <mstyle scriptlevel            = ([+|-] unsigned-integer)
+   	   displaystyle           = (true | false)
+	   scriptsizemultiplier   = number          (0.71)
+	   scriptminsize          = number v-unit   (8pt)
+	   background             = (#rgb | #rrggbb | transparent | html-color-name)
+	   veryverythinmathspace  = number h-unit  (0.0555555em)
+	   verythinmathspace      = number h-unit  (0.1111111em)
+	   thinmathspace          = number h-unit  (0.1666666em)
+	   mediummathspace        = number h-unit  (0.2222222em)
+	   thickmathspace         = number h-unit  (0.2777777em)
+	   verythickmathspace     = number h-unit  (0.3333333em)
+	   veryverythickmathspace = number h-unit  (0.3888888em)
+   > content ... </mstyle>
+   ====================================================================== */
+
+/* NOTE: See comment about scriptlevel at Token Elements */
+mstyle[scriptlevel='0'] { font-size:medium; }
+mstyle[scriptlevel='1'] { font-size:small; }
+mstyle[scriptlevel='2'] { font-size:x-small; }
+mstyle[scriptlevel='3'] { font-size:xx-small; }
+mstyle[scriptlevel='+1'] { font-size:smaller; }
+mstyle[scriptlevel='-1'] { font-size:larger; }
+
+/* NOTE: displaystyle  ?? what's the model? */
+/* NOTE: scriptsizemultiplier not possible w/o extensions? */
+/* NOTE  scriptminsize ? (other than a generic minimum font size) */
+/* NOTE: background handled through general rule above */
+/* NOTE: assignment to named spaces not possible w/o extensions? */
+
+/* ======================================================================
+     3.3.5. Error Message (merror)
+   ======================================================================
+   <merror> text </merror>
+   ====================================================================== */
+
+merror { display:inline; color: red; border-style:solid; }
+
+/* ======================================================================
+     3.3.6. Adjust Space Around Content (mpadded)
+   ======================================================================
+   <mpadded width  = [+|-] unsigned-number (%[pseudo-unit]|pseudo-unit|h-unit|namedspace)
+   	    lspace = [+|-] unsigned-number (%[pseudo-unit]|pseudo-unit|h-unit|namedspace)
+	    height = [+|-] unsigned-number (%[pseudo-unit]|pseudo-unit|v-unit)
+	    depth  = [+|-] unsigned-number (%[pseudo-unit]|pseudo-unit|v-unit)
+   > content </mpadded>
+   ======================================================================
+    NOTE: problems with named units, and depth.
+    NOTE: the +/- indicates incrementing/decrementing the given value
+          otherwise it sets the given value!
+*/
+
+/*
+mpadded[width]  { width: attr(width); }
+mpadded[lspace] { padding-left: attr(lspace); }
+mpadded[height] { height: attr(height); }
+mpadded[depth]  { vertical-align: calc(- attr(depth)); }  ???
+*/
+
+/* ======================================================================
+     3.3.7. Making Sub-Expressions Invisible (mphantom)
+   ======================================================================
+   <mphantom> content ... </mphantom>
+   ====================================================================== */
+
+mphantom { display:inline; visibility:hidden; }
+
+/* ======================================================================
+     3.3.8. Expressions Inside Pair of Fences (mfenced)
+   ======================================================================
+   <mfenced open       = string
+   	    close      = string
+	    separators = char*
+   > content ... </mfenced>
+   ======================================================================
+   NOTE: random sequences of separators isn't possible in pure CSS
+          w/o introducing a special display solely to handle this element.
+     An XSLT would transform this into the equivalent mrow?
+   NOTE: the open & close MUST be stretchy!
+*/
+
+mfenced:before { content: "\("; margin-right:-0.2em; }
+mfenced:after  { content: "\)"; margin-left:-0.2em; }
+mfenced[open]:before { content: attr(open); }
+mfenced[close]:after { content: attr(close); }
+mfenced>* + *:before { content: ", "; margin-left:-0.2em; }
+
+/* Wrong!! Better, if we could at least check for single chars
+mfenced[separators]>*+*:before { content: attr(separators); }
+ */
+mfenced[separators]>*+*:before { content: " ? "; color:red; }
+
+mfenced[separators=""]>*+*:before { content: ""; margin-left:0; }
+
+/* ======================================================================
+     3.3.9. Enclose Expression Inside Notation (menclose)
+   ======================================================================
+   <menclose notation = ( longdiv | actuarial | radical | box | roundedbox | circle
+   	     	       	| left | right | top | bottom | updiagonalstrike
+			| downdiagonalstrike | verticalstrike | horizontalstrike)
+   > content ... </menclose>
+   ======================================================================
+   NOTE: This technique uses borders, which are too easily overridden by author,
+    or even colide w/ each other:
+    Eg. <mfrac><mroot>..</mroot><mroot>...</mroot></mfrac>
+    Better would be something like borders, but separate from them?
+   NOTE: Potential extension: special border side types?  (eg, like parens, surds,etc)
+    They'd presumably be stretchy. This could be used by mfenced as well.
+*/
+
+menclose[notation="longdiv"]:before { content: ")"; font-size:140%; margin-left:-0.1em;}
+menclose[notation="longdiv"]        { border-top: thin solid; padding: 0.2em; }
+menclose[notation="actuarial"]      { border-right: thin solid; border-top: thin solid; padding: 0.2em; }
+menclose[notation="radical"]:before { content: "\221A"; font-size:120%; margin-right:-0.2em;}
+menclose[notation="radical"]>*      { border-top: thin solid; padding: .2em; }
+
+menclose[notation="box"]            { border: thin solid; padding: 0.2em; }
+menclose[notation="roundedbox"]     { border: thin solid; padding: 0.2em; }
+menclose[notation="circle"]         { border: thin solid; padding: 0.2em; }
+
+menclose[notation="top"]            { border-top:    thin solid; padding: 0.2em; }
+menclose[notation="bottom"]         { border-bottom: thin solid; padding: 0.2em; }
+menclose[notation="left"]           { border-left:   thin solid; padding: 0.2em; }
+menclose[notation="right"]          { border-right:  thin solid; padding: 0.2em; }
+
+menclose[notation="updiagonalstrike"]   { text-decoration: line-through; padding: 0.2em; }
+menclose[notation="downdiagonalstrike"] { text-decoration: line-through; padding: 0.2em; }
+menclose[notation="verticalstrike"]     { text-decoration: line-through; padding: 0.2em; }
+menclose[notation="horizontalstrike"]   { text-decoration: line-through; padding: 0.2em; }
+
+
+/************************************************************************
+ ************************************************************************
+ **               Section 3.4. Script and Limit Schemata               **
+ ************************************************************************
+ ************************************************************************/
+
+/* NOTE: Is a new display-model called for?
+     display-roles would be: (superscript | subscript | presuperscript |
+     presubscript | overscript | underscript)
+   NOTE: Use relative sizes: larger|smaller to cooperate better w/ mstyle.
+   NOTE: Vertical alignment of vertical-align:sub|super doesn't seem
+     to reliably take the base heights into account (maybe Opera 7.51 bug?)
+   NOTE: I'm experimented with relative positioning, instead of the more
+     obvious vertical-align, and also inline-table.  These all seem to
+     lead to chaotic vertical alignment problems.  Eg. establishing the
+     baseline of the composite object doesn't seem to work.
+   NOTE: I think, ultimately, CSS3 needs a way to assert where the baseline
+     of a box is.
+
+   NOTE: OTOH, it would seem that some kind of inline-table model is needed
+     for the over/under cases.
+
+   NOTE: The effect of setting displaystyle to false is NOT incorporated.
+
+*/
+
+/* ======================================================================
+     3.4.1. Subscript (msub)
+   ======================================================================
+   <msub subscriptshift = number v-unit (default automatic)
+   > base subscript </msub>
+   ====================================================================== */
+
+msub>*:first-child + *  { display:inline; vertical-align:sub; font-size:smaller; }
+
+/* ======================================================================
+     3.4.2. Superscript (msup)
+   ======================================================================
+   <msup superscriptshift = number v-unit (default automatic)
+   > base superscript </msup>
+   ====================================================================== */
+/*msup { display:inline-block; }*/
+msup { display:inline-block; line-height:2em; }
+msup>*:first-child + *  { display:inline; vertical-align:super; font-size:smaller; }
+
+/* ======================================================================
+     3.4.3. Subscript-superscript pair (msubsup)
+   ======================================================================
+   <msubsub subscriptshift   = number v-unit (default automatic)
+   	    superscriptshift = number v-unit (default automatic)
+   > base subscript superscript </msubsub>
+   ====================================================================== */
+
+msubsup>*:first-child + *     { display:inline; vertical-align:sub;  font-size:smaller; }
+msubsup>*:first-child + * + * { display:inline; vertical-align:super;  font-size:smaller; }
+
+/* ======================================================================
+     3.4.4. Underscript (munder)
+   ======================================================================
+   <munder accentunder = (true|false)  if true, don't decrease size.
+   > base underscript </msub>
+   ======================================================================
+   NOTE: displaystyle issues not handled.
+   NOTE: accent issues not handled.
+   NOTE: Horizontal stretchiness?
+*/
+
+/* NOTE: the shift to left is AD-HOC!!
+munder>*:first-child + * { vertical-align:-100%; font-size:smaller; position:relative; right:0.8em; }
+*/
+
+/* NOTE: Using inline-table is probably better, but vertical positioning is bad */
+munder { display:inline-table; }
+munder>* { display:table-row!important; }
+munder>*:first-child + * { font-size:smaller; }
+/* munder>*:nth-child(2) { font-size:smaller; }*/
+
+/* ======================================================================
+     3.4.5. Overscript (mover)
+   ======================================================================
+   <mover accent = (true|false)  if true, don't decrease size.
+   > base overscript </mover>
+   ====================================================================== */
+
+/*
+mover>*:first-child + * { vertical-align:100%; font-size:smaller; position:relative; right:0.8em; }
+*/
+
+/* NOTE: Use inline-table, but delay the base
+   Vertical alignment is bad.
+mover                           { display:inline-table; }
+mover>*                         { display:table-row; }
+mover>*:nth-child(1)::alternate { move-to:mover; }
+mover>*:nth-child(2)            { font-size:smaller; }
+mover>*:nth-child(2)::after     { content:pending(mover); }
+*/
+
+/* Infered by George's suggestion on munderover */
+mover {display:inline-table; }
+mover > * {display:table-row; }
+mover > * + * {display:table-caption; caption-side:top; }
+
+/* ======================================================================
+     3.4.6. Underscript-overscript pair (munderover)
+   ======================================================================
+   <munderover accent      = (true|false)  if true, don't decrease size.
+   	       accentunder = (true|false)  if true, don't decrease size.
+   > base underscript overscript </munderover>
+   ====================================================================== */
+
+/*
+munderover>*:first-child + * { vertical-align:-100%; font-size:smaller; position:relative; right:0.8em; }
+munderover>*:first-child + * + * { vertical-align:100%; font-size:smaller; position:relative; right:1.6em; }
+*/
+/* Suggested by George Chadvanidze: */
+munderover { display:inline-table; }
+munderover > * {display:table-row; }
+munderover > * + * + * {display:table-caption; caption-side:top; }
+
+/* NOTE: Use inline-table, but delay the base
+   Vertical alignment is bad.
+munderover                           { display:inline-table; }
+munderover>*                         { display:table-row; }
+munderover>nth-child(2+n)            { font-size:smaller; }
+munderover>*:nth-child(1)::alternate { move-to:munderover; }
+munderover>*:nth-child(2)::alternate { move-to:munderover; }
+munderover>*:nth-child(3)::after     { content:pending(munderover); }
+*/
+
+
+/* ======================================================================
+     3.4.7. Prescripts and tensor indices (mmultiscripts)
+   ======================================================================
+   <mmultiscripts subscriptshift   = number v-unit (default automatic)
+   		  superscriptshift = number v-unit (default automatic)
+   > base (subscript superscript)*
+     [<mprescripts/> (presubscript presuperscript)*]
+   </mmultiscripts>
+
+   <none/>
+   ======================================================================
+   NOTE: Hmm, are current selectors sufficient? no...
+   NOTE: See comments on mroot.  Can CSS3 generated content module help?
+*/
+
+mmultiscripts>*  { display:inline; vertical-align:super;  font-size:smaller; }
+mmultiscripts>*:first-child+* { vertical-align:sub; font-size:smaller; }
+mmultiscripts>*:first-child+*+*+* { vertical-align:sub; font-size:smaller; }
+mmultiscripts>*:first-child+*+*+*+*+* { vertical-align:sub; font-size:smaller; }
+mmultiscripts>*:first-child+*+*+*+*+*+*+* { vertical-align:sub; font-size:smaller; }
+mmultiscripts>*:first-child { vertical-align:baseline; font-size: 100%; }
+
+mprescripts:before { color: red; content: "<mprescripts/> not supported"; }
+
+/* NOTE: Speculative coding using CSS3 generated content.
+   Is this consistent with the model??
+mmultiscripts>*:first-child::alternate { display:inline; move-to:mmultiscripts; }
+mmultiscripts>*:nth-child(2+n)  { font-size:smaller; }
+mmultiscripts>*:nth-child(2+2n)::alternate {
+    move-to:mmultiscripts; vertical-align: sub; }
+mmultiscripts>*:nth-child(3+2n)::alternate {
+    move-to:mmultiscripts; vertical-align: super; }
+mprescripts ~ *                 { move-to(here); }
+mprescripts ~ *:nth-child(1+2n) { vertical-align: sub; font-size:smaller; }
+mprescripts ~ *:nth-child(2+2n) { vertical-align: super; font-size:smaller; }
+mmultiscripts::after            { content:pending(mmultiscripts); }
+*/
+
+/************************************************************************
+ ************************************************************************
+ **                   Section 3.5. Tables and Matrices                 **
+ ************************************************************************
+ ************************************************************************/
+
+/* Lots here to sort out, but hopefully most of it can be leveraged
+   off of the normal table module (?) */
+
+/* ======================================================================
+     3.5.1. Table or Matrix (mtable)
+   ======================================================================
+   <mtable align           = (top | bottom | center | baseline | axis)[rownumber]
+   	   rowalign	   = (top | bottom | center | baseline | axis)+
+	   columnalign	   = (left | center | right)+
+	   groupalign	   = group-alignment-list-list ?
+	   alignmentscope  = (true | false)+
+	   columnwidth	   = (auto | number h-unit | namedspace | fit)+
+	   width	   = (auto | number h-unit)
+	   rowspaceing	   = (number v-unit)+
+	   columnscpacing  = (number h-unit | namedspace)+
+	   rowlines	   = (none | solid | dashed)+
+	   columnlines	   = (none | solid | dashed)+
+	   frame	   = (none | solid | dashed)
+	   framespacing	   = (number h-unit | namedspace)(number v-unit | namedspace)
+	   equalrows	   = (true | false)
+	   equalcolumns	   = (true | false)
+	   displaystyle	   = (true | false)
+	   side		   = (left | right | leftoverlap | rightoverlap)
+	   ninlabelspacing = (number h-unit | namedspace)
+   > rows ... </mtable>
+   ======================================================================
+NOTE: All the attributes that allow repeated specifications for rows|columns
+   (rowalign, columnalign, groupalign, alignmentscope, columnwidth, rowspacing,
+    columnspacing, rowlines & columnlines) suffer the same problem as mfenced,
+   namely:  There isn't a practical way, within CSS, to parse these attributes
+   and assign the appropriate properties values.
+*/
+
+mtable { display:inline-table;
+         border-collapse:collapse; }
+mtable>* { display:table-row; }
+mtable[frame='solid']  { border: solid 1pt; }
+mtable[frame='dashed'] { border: dashed 1pt; }
+
+mtable>mtr:first-child>mtd:first-child {padding:0; }
+mtr>* {padding:0.5em 0 0 0.5em; }
+/*
+mtable[columnspacing]>*>* { padding-left:attr(../../columnspacing); }
+mtable[rowspacing]>*>*    { padding-top:attr(../../columnspacing); }
+
+mtable[width] { width:attr(width); }
+*/
+
+mtr>* { text-align:center; }
+mtable[columnalign='left']>*>* { text-align:left;}
+mtable[columnalign='right']>*>* { text-align:right;}
+
+mtr>* { vertical-align:baseline; }
+mtable[rowalign='top']>*>*      { vertical-align:top;}
+mtable[rowalign='bottom']>*>*   { vertical-align:bottom;}
+mtable[rowalign='center']>*>*   { vertical-align:middle;}
+mtable[rowalign='baseline']>*>* { vertical-align:baseline;}
+/* ======================================================================
+     3.5.2. Row in Table or Matrix (mtr)
+   ======================================================================
+   <mtr rowalign    = (top | bottom | center | baseline | axis)
+   	columnalign = (left | center | right)
+	groupalign  = group-alignment-list-list
+   > columns ... </mtr>
+   ====================================================================== */
+
+mtr { display:table-row; }
+mtr>* { display:table-cell; }
+
+/* ======================================================================
+     3.5.3. Labeled Row in Table or Matrix (mlabeledtr)
+   ======================================================================
+   <mlabeledtr rowalign    = (top | bottom | center | baseline | axis)
+   	       columnalign = (left | center | right)
+	       groupalign  = group-alignment-list-list
+   > columns ... </mlabeledtr>
+
+   ====================================================================== */
+
+/* ======================================================================
+     3.5.4. Entry in Table or Matrix (mtd)
+   ======================================================================
+   <mtd rowspan     = positive-integer
+   	columnspan  = positive-integer
+	rowalign    = (top | bottom | center | baseline | axis)
+	columnalign = (left | center | right)
+	groupalign  = group-alignment-list
+   > content ... </mtd>
+   ====================================================================== */
+
+mtd { display:table-cell; white-space: nowrap; padding:0.2em; }
+
+/* ======================================================================
+     3.5.5. Alignment Markers
+   ======================================================================
+   <malignmark edge = (left | right) />
+   <maligngroup groupalign = (left | center | right | decimalpoint) />
+   ====================================================================== */
+
+/************************************************************************
+ ************************************************************************
+ **                    Section 3.6. Enlivening Expressions             **
+ ************************************************************************
+ ************************************************************************/
+
+/* Hmm, not sure this is doable -- or worth doing specially?
+   Probably would require some JavaScript. */
+/* ======================================================================
+     3.6.1. Bind Action to Sub-Expression (maction)
+   ======================================================================
+   <maction actiontype = (toggle | statusline | tooltip | highlight)
+   	    selection  = positive-integer
+   > various ... </maction>
+   ======================================================================
+   NOTE: Here's some hacky imitations of some of the actiontypes. (except toggle!)
+*/
+maction>*:first-child { display:inline; }
+maction>* { display:none; }
+/* Doubtful this would work anyway, since color is in _some_ other namespace:
+maction[actiontype='highlight'] > *:first-child:hover{
+   background-color:attr(color); }
+*/
+maction[actiontype='highlight'] > *:first-child:hover{
+   background-color:red; }
+maction[actiontype='statusline'] > *:first-child:hover + * {
+   display:block; position:absolute; background:#C0C0C0; }
+maction[actiontype='tooltip'] > *:first-child:hover + * {
+   display:block; position:absolute; background:#C0C000; }
+
+/*  ====================================================================== */

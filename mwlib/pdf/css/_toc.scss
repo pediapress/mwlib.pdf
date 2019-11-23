@@ -1,0 +1,45 @@
+/* toc section */
+#front_matter {
+  page-break-before: always;
+  page-break-after: always;
+}
+
+#table_of_contents {
+  h2 {
+    font-size: 16pt;
+    &::before { content: ""}
+  }
+  h1 + h2 {
+    padding-top: 16pt;
+    border-top: 0.25pt solid black;
+    margin-top: 56pt;
+  }
+  ol + h2 {
+    margin-top: 24pt;
+  }
+
+  page: toc;
+  ol {
+    margin-top: 8pt;
+    margin-left: 0;
+    li {
+      width: 100%;
+      line-height: 16pt;
+      list-style-position: inside;
+      margin: 0;
+      &::marker {
+        font-weight: normal;
+        text-align: right;
+      }
+      A {
+        .article-title {
+          font-weight: 300;
+        }
+      }
+      A[href]::after {
+        content: leader(" . ") target-counter(attr(href), page);
+        font-weight: 300;
+      }
+    }
+  }
+}

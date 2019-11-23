@@ -1,0 +1,21 @@
+
+p, table, ul, ol, div, blockquote{
+    margin-top: 2.5mm;
+    margin-bottom: 2.5mm;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+dl, dd {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+table, div.thumb {
+    margin-top: 0.5mm;
+    margin-bottom: 0.5mm;
+}
+
+br {
+    margin-bottom: 1cm !important;
+}

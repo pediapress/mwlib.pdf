@@ -1,0 +1,756 @@
+@charset "UTF-8";
+* {
+  float: none;
+  margin: 0;
+  padding: 0;
+  color: prince-overprint(cmyk(0, 0, 0, 1)); }
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+@page {
+  size: a4;
+  margin: 40pt 40pt 60pt 40pt;
+  padding: 0; }
+
+/* thickness of header rule */
+/* thickness of footer rule */
+body {
+  text-align: left;
+  overflow: hidden;
+  padding: 0;
+  margin: 0; }
+
+article {
+  margin: 0; }
+  article .mw-parser-output {
+    width: 100%; }
+    article .mw-parser-output > p, article .mw-parser-output > ul, article .mw-parser-output > ol, article .mw-parser-output > table, article .mw-parser-output > dl {
+      margin-right: 177pt; }
+    article .mw-parser-output > table.wide-image-table {
+      margin-right: 0;
+      clear: both; }
+
+.nodisplay, .visualhide {
+  display: none; }
+
+.page-break-before {
+  page-break-before: always; }
+
+.page-break-after {
+  page-break-after: always; }
+
+.col-12 {
+  width: 515pt; }
+
+.col-11 {
+  width: 470.75pt; }
+
+.col-10 {
+  width: 426.5pt; }
+
+.col-9 {
+  width: 382.25pt; }
+
+.col-8 {
+  width: 338pt; }
+
+.col-7 {
+  width: 293.75pt; }
+
+.col-6 {
+  width: 249.5pt; }
+
+.col-5 {
+  width: 205.25pt; }
+
+.col-4 {
+  width: 161pt; }
+
+.col-3 {
+  width: 116.75pt; }
+
+.col-2 {
+  width: 72.5pt; }
+
+.col-1 {
+  width: 28.25pt; }
+
+article.pp-chapter, section#appendix article {
+  string-set: footer-text attr(data-pp-footer-text); }
+
+@page articles, wide {
+  @bottom-left {
+    content: element(footer);
+    margin-top: 16pt;
+    border-top: 0.5pt solid black;
+    font-family: "Charis SIL", "Noto Serif", serif;
+    padding-bottom: 28pt;
+    font-size: 10pt;
+    width: auto; }
+  @bottom-right {
+    content: counter(page);
+    font-weight: bold;
+    margin-top: 16pt;
+    border-top: 0.5pt solid black;
+    font-family: "Charis SIL", "Noto Serif", serif;
+    padding-bottom: 28pt;
+    font-size: 10pt; }
+  padding-bottom: 16pt; }
+
+#articles .footer, #appendix .footer {
+  position: running(footer); }
+  #articles .footer .title::after, #appendix .footer .title::after {
+    padding: 0 8pt;
+    content: '|'; }
+  #articles .footer .counter, #appendix .footer .counter {
+    font-size: 8pt;
+    font-style: italic; }
+
+#articles {
+  page: articles; }
+
+@page appendix {
+  @bottom-left {
+    content: string(footer-text);
+    margin-top: 16pt;
+    border-top: 0.5pt solid black;
+    font-family: "Charis SIL", "Noto Serif", serif;
+    padding-bottom: 28pt;
+    font-size: 10pt;
+    width: auto; }
+  @bottom-right {
+    content: counter(page);
+    font-weight: bold;
+    margin-top: 16pt;
+    border-top: 0.5pt solid black;
+    font-family: "Charis SIL", "Noto Serif", serif;
+    padding-bottom: 28pt;
+    font-size: 10pt; }
+  padding-bottom: 16pt; }
+
+#appendix {
+  page: appendix; }
+
+@page wide {
+  prince-rotate-body: -90deg; }
+
+#title_page .wikipedia_logo {
+  width: 113.4pt;
+  height: 18pt;
+  position: absolute;
+  top: 37pt;
+  left: 33pt; }
+
+#title_page .pediapress_logo {
+  width: 40pt;
+  height: 40pt;
+  position: absolute;
+  top: 705pt;
+  left: 458pt; }
+
+#title_page h1 {
+  font-size: 50pt;
+  line-height: 1em;
+  font-weight: bold;
+  margin-top: 112pt;
+  padding-left: 40pt;
+  border: none; }
+
+#title_page h2 {
+  font-size: 16pt;
+  font-weight: bold;
+  padding-left: 40pt; }
+
+#title_page .horizontal-line {
+  width: 50pt;
+  height: 2pt;
+  margin-top: 20pt;
+  margin-left: 40pt;
+  border-bottom: 2px solid; }
+
+#title_page ul.info_line {
+  position: absolute;
+  top: 715pt;
+  left: 40pt;
+  margin: 0;
+  padding: 0; }
+  #title_page ul.info_line li {
+    display: inline;
+    font-style: italic;
+    font-size: 12pt; }
+    #title_page ul.info_line li::after {
+      content: " • ";
+      font-weight: bold; }
+    #title_page ul.info_line li:last-child::after {
+      content: ""; }
+    #title_page ul.info_line li#total_pages::before {
+      content: counter(pages); }
+
+/* toc section */
+#front_matter {
+  page-break-before: always;
+  page-break-after: always; }
+
+#table_of_contents {
+  page: toc; }
+  #table_of_contents h2 {
+    font-size: 16pt; }
+    #table_of_contents h2::before {
+      content: ""; }
+  #table_of_contents h1 + h2 {
+    padding-top: 16pt;
+    border-top: 0.25pt solid black;
+    margin-top: 56pt; }
+  #table_of_contents ol + h2 {
+    margin-top: 24pt; }
+  #table_of_contents ol {
+    margin-top: 8pt;
+    margin-left: 0; }
+    #table_of_contents ol li {
+      width: 100%;
+      line-height: 16pt;
+      list-style-position: inside;
+      margin: 0; }
+      #table_of_contents ol li::marker {
+        font-weight: normal;
+        text-align: right; }
+      #table_of_contents ol li A .article-title {
+        font-weight: 300; }
+      #table_of_contents ol li A[href]::after {
+        content: leader(" . ") target-counter(attr(href), page);
+        font-weight: 300; }
+
+@font-face {
+  font-family: pp-serif;
+  /* Chinese */
+  unicode-range: U+3000-4DFF, U+4E00-9FCC, U+3400-4DB5, U+20000-2A6D6, U+2A700-2B734, U+2B740-2B81D, U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+  src: prince-lookup("Noto Serif CJK SC"); }
+
+@font-face {
+  font-family: pp-sans-serif;
+  /* Chinese */
+  unicode-range: U+3000-4DFF, U+4E00-9FCC, U+3400-4DB5, U+20000-2A6D6, U+2A700-2B734, U+2B740-2B81D, U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+  src: prince-lookup("Noto Sans CJK SC"); }
+
+@font-face {
+  font-family: pp-serif;
+  unicode-range: U+0900-097F;
+  src: prince-lookup("Noto Serif Devanagari"); }
+
+@font-face {
+  font-family: pp-sans-serif;
+  unicode-range: U+0900-097F;
+  src: prince-lookup("Noto Sans Devanagari"); }
+
+@font-face {
+  font-family: pp-serif;
+  unicode-range: U+0980-09FF;
+  src: prince-lookup("Noto Serif Bengali"); }
+
+@font-face {
+  font-family: pp-sans-serif;
+  unicode-range: U+0980-09FF;
+  src: prince-lookup("Noto Sans Bengali"); }
+
+@font-face {
+  font-family: pp-serif;
+  unicode-range: U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F, U+1C80-1C8F, U+1D2B-1D78, U+FE2E-FE2F;
+  src: prince-lookup("Noto Serif"); }
+
+@font-face {
+  font-family: pp-sans-serif;
+  unicode-range: U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F, U+1C80-1C8F, U+1D2B-1D78, U+FE2E-FE2F;
+  src: prince-lookup("Noto Sans"); }
+
+@font-face {
+  font-family: pp-serif;
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+1EE00-1EEFF, U+1EC70-1ECBF, U+10E60-10E7F;
+  src: prince-lookup("Noto Sans Arabic"); }
+
+@font-face {
+  font-family: pp-sans-serif;
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+1EE00-1EEFF, U+1EC70-1ECBF, U+10E60-10E7F;
+  src: prince-lookup("Noto Sans Arabic"); }
+
+@font-face {
+  font-family: pp-serif;
+  src: local("Charis SIL"); }
+
+@font-face {
+  font-family: pp-sans-serif;
+  src: local("Lato"); }
+
+body {
+  font-size: 10.5pt;
+  line-height: 16pt;
+  font-weight: 300;
+  font-family: pp-sans-serif, prince-no-fallback;
+  hyphens: auto; }
+
+p, table, li, dl, pre, th, td {
+  font-size: 10.5pt;
+  line-height: 16pt; }
+
+* + p {
+  margin-top: 8pt; }
+
+.mw-parser-output > p {
+  text-align: left; }
+
+.mw-parser-output p:first-of-type {
+  font-weight: normal; }
+
+.center p {
+  text-align: center; }
+
+A {
+  color: inherit;
+  text-decoration: none; }
+
+.two-column {
+  column-count: 2;
+  column-fill: auto;
+  column-gap: 16pt; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 8pt;
+  page-break-after: avoid;
+  font-weight: bold; }
+
+h1, h2, h3, h4 {
+  hyphens: none;
+  font-family: pp-serif, prince-no-fallback; }
+
+h5, h6 {
+  font-family: pp-sans-serif, prince-no-fallback;
+  font-weight: bold;
+  margin: 6pt 0 0; }
+
+h1 {
+  font-size: 23.625pt;
+  line-height: 26px;
+  font-weight: bold;
+  padding-top: 8pt;
+  border-top: 2pt solid black;
+  margin-bottom: 56pt;
+  column-span: all;
+  clear: both; }
+
+h2 {
+  font-size: 15.75pt;
+  line-height: 18pt;
+  margin: 10pt 0 3pt; }
+
+h3 {
+  font-size: 12.5pt;
+  line-height: 14pt;
+  margin: 10pt 0 0; }
+
+h4 {
+  font-size: 10.5pt;
+  line-height: 14pt; }
+
+h5 {
+  font-size: 9pt;
+  line-height: 11pt; }
+
+h6 {
+  font-size: 7pt;
+  line-height: 9pt; }
+
+article {
+  counter-reset: h2, h3; }
+  article > h1 {
+    string-set: chapter-title content();
+    page-break-before: always; }
+  article h2 {
+    counter-increment: h2;
+    counter-reset: h3; }
+  article h3 {
+    counter-increment: h3; }
+
+.infobox, .infobox p, .infobox td, .infobox th, .infobox li, .infobox dd, div.thumbcaption, div.thumbcaption p, div.thumbcaption td, div.thumbcaption th, div.thumbcaption li, div.thumbcaption dd, .gallerybox .gallerytext, .gallerybox .gallerytext p, .gallerybox .gallerytext td, .gallerybox .gallerytext th, .gallerybox .gallerytext li, .gallerybox .gallerytext dd, .reflist, .reflist p, .reflist td, .reflist th, .reflist li, .reflist dd, ol.references, ol.references p, ol.references td, ol.references th, ol.references li, ol.references dd {
+  font-family: pp-sans-serif, prince-no-fallback;
+  font-size: 7pt;
+  line-height: 9pt; }
+
+.gallerybox .gallerytext p {
+  font-weight: 300;
+  font-style: italic; }
+
+article.contributors h2, article.contributors p {
+  font-size: 7pt;
+  margin-bottom: 0;
+  line-height: 1rem; }
+
+article.contributors p {
+  margin-top: 0; }
+
+article.contributors .label {
+  font-style: italic; }
+
+.references {
+  clear: both; }
+  .references::before {
+    clear: both; }
+
+.pp_chapter h2.page-break-before, .pp_chapter .page-break-before + h2,
+.pp_chapter .pp-table.page-break-before, .pp_chapter .page-break-after + .pp-table,
+.pp_chapter .thumb.page-break-before, .pp_chapter .page-break-after + .thumb {
+  margin-top: 0; }
+
+.pp_article h1.page-break-before, .pp_article .page-break-after + h1,
+.pp_article h2.page-break-before, .pp_article .page-break-after + h2,
+.pp_article .pp-table.page-break-before, .pp_article .page-break-after + .pp-table,
+.pp_article .thumb.page-break-before, .pp_article .page-break-after + .thumb {
+  margin-top: -32pt; }
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 16pt; }
+  table th {
+    background-color: cmyk(0, 0, 0, 0.1);
+    text-align: left; }
+  table th, table td {
+    page-break-inside: avoid; }
+
+table.short-table {
+  page-break-inside: avoid; }
+
+* + table {
+  margin-top: 4pt; }
+  * + table.rotated-table {
+    margin-top: 0;
+    page: wide;
+    width: 100%; }
+
+h1 + table.table_noCSS, h2 + table.table_noCSS {
+  margin-top: 0; }
+
+table.navbox td, table.navbox th,
+table.wikitable td,
+table.wikitable th,
+table.toccolours td,
+table.toccolours th,
+table.pp_border_table td,
+table.pp_border_table th {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 0 8pt;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.05);
+  vertical-align: middle;
+  font-size: 7pt; }
+  table.navbox td p, table.navbox th p,
+  table.wikitable td p,
+  table.wikitable th p,
+  table.toccolours td p,
+  table.toccolours th p,
+  table.pp_border_table td p,
+  table.pp_border_table th p {
+    font-size: 7pt; }
+  table.navbox td:first-child, table.navbox th:first-child,
+  table.wikitable td:first-child,
+  table.wikitable th:first-child,
+  table.toccolours td:first-child,
+  table.toccolours th:first-child,
+  table.pp_border_table td:first-child,
+  table.pp_border_table th:first-child {
+    border-left: none; }
+  table.navbox td:last-child, table.navbox th:last-child,
+  table.wikitable td:last-child,
+  table.wikitable th:last-child,
+  table.toccolours td:last-child,
+  table.toccolours th:last-child,
+  table.pp_border_table td:last-child,
+  table.pp_border_table th:last-child {
+    border-right: none; }
+
+table.navbox th,
+table.wikitable th,
+table.toccolours th,
+table.pp_border_table th {
+  background-color: cmyk(0, 0, 0, 0.1); }
+
+table.navbox caption,
+table.wikitable caption,
+table.toccolours caption,
+table.pp_border_table caption {
+  font-family: pp-sans-serif, prince-no-fallback;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 7pt;
+  line-height: 9pt;
+  text-align: left;
+  position: relative;
+  caption-side: top;
+  margin-bottom: 4pt; }
+
+tr.pp_nobreak_after {
+  page-break-after: avoid; }
+
+tr.pp_nobreak_before {
+  page-break-before: avoid; }
+
+table.mbox-small .mbox-image {
+  padding: 8pt; }
+
+table.mbox-small .mbox-text {
+  vertical-align: middle;
+  padding: 8pt 8pt 8pt 0; }
+
+* + table.pullquote {
+  margin-top: 16pt;
+  margin-bottom: 16pt; }
+
+article .mw-parser-output > table.right-floated-table {
+  margin-left: 16pt;
+  margin-right: 0;
+  margin-top: 4pt;
+  margin-bottom: 16pt; }
+
+table.over-wide {
+  margin-bottom: 4pt; }
+
+ul, ol {
+  margin-left: 32pt;
+  text-align: left; }
+
+* + ul {
+  margin-top: 4pt; }
+
+img.thumbimage, div.thumbimage img, table a.image img {
+  page-break-after: avoid;
+  width: 100%; }
+
+div.thumbcaption {
+  font-size: 7pt;
+  font-family: pp-sans-serif, prince-no-fallback;
+  text-align: left;
+  padding-top: 0;
+  margin-bottom: 16pt;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 9pt;
+  overflow: visible; }
+
+div.thumb {
+  page-break-inside: avoid;
+  margin: 0; }
+  div.thumb .thumbinner {
+    text-align: center; }
+
+div.thumb.tright, div.thumb.tleft {
+  float: right;
+  clear: right;
+  margin-left: 16pt; }
+
+div.thumb + div.thumb + div.thumb + div.thumb {
+  margin-left: -16pt; }
+
+div.tmulti div.tsingle + div.tsingle {
+  padding-left: 16pt; }
+
+.debug .low-ppi {
+  border-top: 2mm solid red;
+  padding-top: 1mm; }
+
+.debug .local-image {
+  border-bottom: 2mm solid blue;
+  padding-bottom: 1mm; }
+
+.wide-image {
+  float: prince-snap; }
+
+.remove {
+  border: 3mm solid red; }
+
+a.img_reference[href]::after {
+  content: " " target-counter(attr(href), page); }
+
+ul.gallery {
+  margin: -16pt 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  margin-left: -16pt; }
+  ul.gallery > li.gallerybox {
+    width: 116.75pt; }
+    ul.gallery > li.gallerybox > div {
+      margin-top: 16pt;
+      margin-left: 16pt;
+      display: flex;
+      flex-direction: column; }
+      ul.gallery > li.gallerybox > div > .thumb {
+        background-color: rgba(0, 0, 0, 0.05);
+        padding: 8pt;
+        display: flex; }
+        ul.gallery > li.gallerybox > div > .thumb > div {
+          height: 7rem;
+          width: 100%;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: 50% 50%; }
+          ul.gallery > li.gallerybox > div > .thumb > div .thumbimage {
+            display: none; }
+      ul.gallery > li.gallerybox > div > .gallerytext {
+        margin-top: 8pt;
+        flex: 1; }
+
+h3 + ul.gallery {
+  margin-top: -8pt; }
+
+ul.gallery + h3 {
+  margin-top: 16pt; }
+
+li, p {
+  prince-footnote-policy: keep-with-line; }
+
+.reference, sup {
+  font-size: 83%;
+  vertical-align: super;
+  line-height: none; }
+
+div#half_title_page, div#title_page, div#copyright_page, div#dedication,
+div#sponsor_people, div#sponsor_company {
+  page: frontmatter;
+  column-span: all;
+  margin: 4em;
+  max-width: 100% !important; }
+
+div#half_title_page {
+  page-break-after: right;
+  font-size: 1.25em; }
+
+div#half_title_page h1 {
+  text-align: right; }
+
+div#title_page {
+  padding-top: 4em;
+  page-break-after: left;
+  font-size: 3em; }
+
+div#title_page h1, div#title_page h2, div#title_page h3 {
+  text-align: right; }
+
+div#title_page h3 {
+  margin-top: 2em;
+  font-size: 1em; }
+
+div#copyright_page {
+  page-break-after: always;
+  font-size: 1.5em;
+  line-height: 1.25em;
+  text-align: left; }
+
+div#copyright_page p {
+  margin-bottom: 2em; }
+
+div#dedication, div#sponsor_people, div#sponsor_company {
+  page-break-after: right;
+  font-size: 1.75em;
+  line-height: 1.75em;
+  /* padding-top: 10em; */
+  padding: 20em 6em 2em 6em; }
+
+#dedication p.text, #sponsor_company p.text {
+  margin-bottom: 2em;
+  text-align: left;
+  font-style: italic; }
+
+#dedication p.attribution, .sistersitebox {
+  display: none; }
+
+div#sponsor_people ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 1em; }
+
+div#sponsor_people li {
+  list-style-type: none;
+  list-style-position: outside; }
+
+div#sponsor_people p {
+  text-align: left; }
+
+.pp_no_float {
+  float: none !important; }
+
+.pp_float_table {
+  clear: both; }
+
+blockquote {
+  margin-left: 0.25cm !important;
+  margin-right: 0.25cm !important; }
+
+.center {
+  text-align: center; }
+
+dd {
+  margin-left: 1em; }
+
+dt, dl {
+  margin-left: 0; }
+
+div[style*="position"][style*="relative"] {
+  /* https://ca.wikipedia.org/wiki/Saint-Laurent-d%27Onay */
+  overflow: hidden; }
+
+/* FIXME: merge and remove*/
+img.tex {
+  /*  texvc / texsvg */
+  max-width: 100%;
+  margin: 0.75mm 0 0.5mm;
+  vertical-align: middle; }
+
+dd > .mwe-math-element img {
+  margin-top: 4pt; }
+
+.infobox-wrapper {
+  width: 161pt;
+  float: right;
+  background-color: rgba(0, 0, 0, 0.07);
+  page-break-inside: auto; }
+  .infobox-wrapper table.infobox {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: auto; }
+    .infobox-wrapper table.infobox table {
+      width: auto; }
+    .infobox-wrapper table.infobox tr:nth-child(even) {
+      background: transparent; }
+    .infobox-wrapper table.infobox tr:nth-child(odd) {
+      background: rgba(0, 0, 0, 0.07); }
+    .infobox-wrapper table.infobox th, .infobox-wrapper table.infobox td {
+      margin: 0;
+      padding: 4pt 8pt;
+      background: none;
+      border-top: 0.25pt solid white;
+      width: auto; }
+    .infobox-wrapper table.infobox td.contains-img-wide {
+      border-top: none;
+      padding: 0; }
+      .infobox-wrapper table.infobox td.contains-img-wide div {
+        max-width: 161pt;
+        padding: 0;
+        margin: 0;
+        display: inline-block; }
+      .infobox-wrapper table.infobox td.contains-img-wide span, .infobox-wrapper table.infobox td.contains-img-wide a {
+        display: inline; }
+      .infobox-wrapper table.infobox td.contains-img-wide a.image {
+        display: block; }
+        .infobox-wrapper table.infobox td.contains-img-wide a.image img.infobox-img-wide {
+          display: block;
+          max-width: 161pt;
+          height: auto;
+          padding: 0;
+          margin: 0; }
+
+/*# sourceMappingURL=base.css.map */

@@ -1,0 +1,29 @@
+.pp_no_float {
+    float: none !important;
+}
+
+.pp_float_table {
+    clear: both;
+ }
+
+blockquote {
+    margin-left: 0.25cm !important;
+    margin-right: 0.25cm !important;
+}
+
+.center {
+    text-align: center;
+}
+
+dd {
+    margin-left: 1em;
+}
+
+
+dt, dl {
+    margin-left: 0;
+}
+
+div[style*="position"][style*="relative"] { /* https://ca.wikipedia.org/wiki/Saint-Laurent-d%27Onay */
+    overflow: hidden;
+}

@@ -1,0 +1,70 @@
+div.thumbinner {
+}
+
+img.thumbimage, div.thumbimage img, table a.image img {
+  page-break-after: avoid;
+  width: 100%;
+}
+
+div.thumbcaption {
+  font-size: 7pt;
+  font-family: $sans-serif-stack;
+  text-align: left;
+  padding-top: 0;
+  //margin-top: $gutter-width/4;
+  margin-bottom: $gutter-width;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 9pt;
+  overflow: visible;
+}
+
+div.thumb {
+  page-break-inside: avoid;
+  margin: 0;
+  .thumbinner {
+    text-align: center;
+  }
+}
+
+
+div.thumb.tright, div.thumb.tleft {
+  float: right;
+  clear: right;
+  margin-left: $gutter-width;
+}
+
+div.thumb + div.thumb + div.thumb + div.thumb {
+  margin-left: -1 * $gutter-width;
+}
+
+div.tmulti {
+  div.tsingle + div.tsingle {
+    padding-left: $gutter-width;
+  }
+}
+
+.debug .low-ppi {
+  border-top: 2mm solid red;
+  padding-top: 1mm;
+}
+
+.debug .local-image {
+  border-bottom: 2mm solid blue;
+  padding-bottom: 1mm;
+}
+
+.pp_figure {
+}
+
+.wide-image {
+  float: prince-snap;
+}
+
+.remove {
+  border: 3mm solid red;
+}
+
+a.img_reference[href]::after {
+  content: " " target-counter(attr(href), page)
+}

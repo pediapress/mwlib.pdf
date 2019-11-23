@@ -1,0 +1,15 @@
+* {
+  float: none;
+  margin: 0;
+  padding: 0;
+  color: prince-overprint(cmyk(0, 0, 0, 1));
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}

@@ -1,0 +1,9 @@
+img.tex {
+  /*  texvc / texsvg */
+  max-width: 100%;
+  margin: 0.75mm 0 0.5mm;
+  vertical-align: middle;
+}
+dd > .mwe-math-element img {
+  margin-top: $small_vertical_margin;
+}

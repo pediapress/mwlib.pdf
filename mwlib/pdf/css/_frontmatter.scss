@@ -1,0 +1,78 @@
+div#half_title_page, div#title_page, div#copyright_page, div#dedication,
+div#sponsor_people, div#sponsor_company {
+    page: frontmatter;
+    column-span:all;
+    margin: 4em;
+    max-width: 100% !important;
+}
+
+div#half_title_page {
+    page-break-after: right;
+    font-size: 1.25em;
+}
+
+div#half_title_page h1 {
+    text-align: right;
+}
+
+
+div#title_page {
+    padding-top: 4em;
+    page-break-after: left;
+    font-size: 3em;
+}
+
+div#title_page h1, div#title_page h2, div#title_page h3 {
+    text-align: right;
+}
+
+div#title_page h3 {
+    margin-top: 2em;
+    font-size: 1em;
+}
+
+div#copyright_page {
+    page-break-after: always;
+    font-size: 1.5em;
+    line-height: 1.25em;
+    text-align: left;
+}
+
+div#copyright_page p {
+    margin-bottom: 2em;
+}
+
+
+div#dedication, div#sponsor_people, div#sponsor_company {
+    page-break-after: right;
+    font-size: 1.75em;
+    line-height: 1.75em;
+    /* padding-top: 10em; */
+    padding: 20em 6em 2em 6em;
+}
+    
+
+#dedication p.text, #sponsor_company p.text{
+    margin-bottom: 2em;
+    text-align: left;
+    font-style: italic;
+}
+
+#dedication p.attribution, .sistersitebox {
+    display: none;
+}
+
+div#sponsor_people ul {
+    margin: 0;
+    padding: 0;
+    margin-top:1em;
+}
+
+div#sponsor_people li {
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+div#sponsor_people p {
+    text-align: left;
+}
