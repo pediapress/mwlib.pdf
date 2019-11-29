@@ -3,7 +3,7 @@
 ## Overview
 This is a MediaWiki to PDF renderer based on the HTML of MediaWiki pages. Since Wikipedia's original output format is HTML, we found that relying on HTML proves to be more reliable than the Wikimarkup used in other PediaPress renderers created previously. The main benefit is that developers can work with familiar technologies like HTML and CSS and face fewer frictions than when converting to different rendering technologies like LaTeX, ODF or DocBook.
 
-Under the hood, the renderer uses [PrinceXML](https://www.princexml.com/) which fully supports the [CSS Paged Media](https://www.w3.org/TR/css-page-3/) and allows for rendering print-specific elements like table-of-contents and page numbers directly from a HTML/CSS source.
+Under the hood, the renderer uses [PrinceXML](https://www.princexml.com/) which fully supports [CSS Paged Media](https://www.w3.org/TR/css-page-3/) and allows for rendering print-specific elements like table-of-contents and page numbers directly from a HTML/CSS source.
 
 The target output should look like this (thanks [Alex Hollender](https://meta.wikimedia.org/wiki/User:AHollender_(WMF)) 
 for the designs):
