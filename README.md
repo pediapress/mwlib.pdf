@@ -37,10 +37,10 @@ Try 'prince --help' for more information.
 Now, you are ready to `make install` to get started.
 
 ## Getting Started
-To render an arbitrary article from Wikipedia, enter the following command:
+To render a few arbitrary article from the English Wikipedia, enter the following commands:
 ```
-mw-zip -o scripts.zip -c :en 'Chinese characters' 'Japanese writing system' 'Cyrillic script' 'Indo-Aryan languages'
-mw-render -wpdf -c scripts.zip -o scripts.pdf
+$ mw-zip -o scripts.zip -c :en 'Chinese characters' 'Japanese writing system' 'Cyrillic script' 'Indo-Aryan languages'
+$ mw-render -wpdf -c scripts.zip -o scripts.pdf
 ```
 
 To learn more about the various options of `mw-zip` use `mw-zip --help`. 
