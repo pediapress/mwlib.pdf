@@ -34,7 +34,11 @@ Try 'prince --help' for more information.
 
 ```
 
-Now, you are ready to `make install` to get started.
+Now, you are ready to install the project requirements to get started.
+
+```
+$ make install
+```
 
 ## Getting Started
 To render a few arbitrary article from the English Wikipedia, enter the following commands:
