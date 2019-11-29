@@ -13,9 +13,40 @@ for the designs):
  
 ## Installation
 
+The PDF renderer requires PrinceXML for creating PDF files:
+* [Download Prince](https://www.princexml.com/download/)
+* Put the `prince` binary in your path (e.g. `/usr/local/bin/prince`)
+* Check that prince is working correctly
+
+If Prince is installed correctly, you should see something like this on the command line:
+```
+~$ prince
+Usage:
+  prince [OPTIONS] doc.html              Convert doc.html to doc.pdf
+  prince [OPTIONS] doc.html -o out.pdf   Convert doc.html to out.pdf
+  prince [OPTIONS] FILES... -o out.pdf   Combine multiple files to out.pdf
+
+Try 'prince --help' for more information.
+
+```
+
+Now, you are ready to `make install` to get started.
+
 ## Getting Started
+To render an arbitrary article from Wikipedia, enter the following command:
+```
+mw-zip -o scripts.zip -c :en 'Chinese characters' 'Japanese writing system' 'Cyrillic script' 'Indo-Aryan languages'
+mw-render -wpdf -c scripts.zip -o scripts.pdf
+```
+
+To learn more about the various options of `mw-zip` use `mw-zip --help`. 
+
+To learn more about the various options of `mw-render` use `mw-render --help`. 
 
 ## Contributing
+As you will see, rendering has a lot of room for improvement.
+
+Pull requests are welcome.
  
 ## MIT License
 

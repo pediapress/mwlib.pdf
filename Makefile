@@ -6,9 +6,8 @@ pip-compile-dev::
 	pip install -U pip-tools
 	pip-compile --upgrade requirements-dev.in
 
-install:: pip-compile pip-compile-dev
+install:: pip-compile
 	pip install -r requirements.txt
-	pip install -r requirements-dev.txt
 	pip install -e .
 
 build: clean

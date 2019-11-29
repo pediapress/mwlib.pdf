@@ -4,7 +4,6 @@
 mwlib.pdf.egg-info
 /test.pdf
 /test.zip
-/mwlib/html/css/base.css
 build/
 dist/
 .idea
@@ -13,9 +12,10 @@ dist/
 .*.swp
 .pytest_cache
 *.mo
-/mwlib/html/css/base.css.map
 /debug.html
 /debug_final.html
 *.zip
 *.pdf
 license.dat
+mwlib/pdf/css/base.css
+mwlib/pdf/css/base.css.map
