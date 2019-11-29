@@ -41,7 +41,27 @@ mw-render -wpdf -c scripts.zip -o scripts.pdf
 
 To learn more about the various options of `mw-zip` use `mw-zip --help`. 
 
-To learn more about the various options of `mw-render` use `mw-render --help`. 
+To learn more about the various options of `mw-render` use `mw-render --help`.
+
+## Math Formulas
+Currently, rendering Math Formulas requires TeX (`xelatex`). Math formulas are cached as SVG files 
+with a hashed name. Please keep an eye on the `math_formulas` folder since there is no cache 
+management.
+
+The full installation of TeXLive is pretty large (2.5GB). Fortunately, for our purposes 
+a basic distribution and a few additional packages are sufficient.
+
+On a Mac, a good starting point is to install [BasicTeX](https://tug.org/mactex/morepackages.html).
+Other operating systems might have similar "basic" distributions.
+
+After the basic installation completed, use [tlmgr](https://www.tug.org/texlive/tlmgr.html) to install required additional packages:
+```
+$ sudo tlmgr update --self
+$ sudo tlmgr install collection-fontsrecommended
+$ sudo tlmgr install cancel
+$ sudo tlmgr install AMSmath
+$ sudo tlmgr install dvisvgm
+``` 
 
 ## Contributing
 As you will see, rendering has a lot of room for improvement.
