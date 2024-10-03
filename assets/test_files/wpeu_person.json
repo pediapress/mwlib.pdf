@@ -1,0 +1,26 @@
+{
+    "items": [
+        {
+            "content_type": "text/x-wiki",
+            "title": "Jose Ramon Etxebarria",
+            "type": "article"
+        }
+    ],
+    "licenses": [],
+    "summary": "",
+    "type": "collection",
+    "version": 1,
+    "wikis": [
+        {
+            "baseurl": "https://eu.wikipedia.org/w",
+            "imagesize": 1200,
+            "keep_tmpfiles": false,
+            "output": "et.zip",
+            "pages": [
+                "Jose Ramon Etxebarria"
+            ],
+            "script_extension": ".php",
+            "type": "WikiConf"
+        }
+    ]
+}

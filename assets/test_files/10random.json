@@ -1,0 +1,137 @@
+{
+    "items": [
+        {
+            "content_type": "text/x-wiki",
+            "currentVersion": 1,
+            "latest": 796492653,
+            "revision": 796492653,
+            "timestamp": "1503296374",
+            "title": "D\u00e9sir\u00e9e Le Beau",
+            "type": "article",
+            "url": "https://en.wikipedia.org/wiki/D%C3%A9sir%C3%A9e_Le_Beau"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "currentVersion": 1,
+            "latest": 802914974,
+            "revision": 802914974,
+            "timestamp": "1506672479",
+            "title": "Iltyd Nicholl Clayton",
+            "type": "article",
+            "url": "https://en.wikipedia.org/wiki/Iltyd_Nicholl_Clayton"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "currentVersion": 1,
+            "latest": 840513183,
+            "revision": 840513183,
+            "timestamp": "1525951379",
+            "title": "Kosmaj",
+            "type": "article",
+            "url": "https://en.wikipedia.org/wiki/Kosmaj"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "currentVersion": 1,
+            "latest": 831728508,
+            "revision": 831728508,
+            "timestamp": "1521674924",
+            "title": "Gracilibacillus",
+            "type": "article",
+            "url": "https://en.wikipedia.org/wiki/Gracilibacillus"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "currentVersion": 1,
+            "latest": 847695941,
+            "revision": 847695941,
+            "timestamp": "1530074779",
+            "title": "Downtown Summerlin",
+            "type": "article",
+            "url": "https://en.wikipedia.org/wiki/Downtown_Summerlin"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "currentVersion": 1,
+            "latest": 824900031,
+            "revision": 824900031,
+            "timestamp": "1518242413",
+            "title": "Abir Muhaisen",
+            "type": "article",
+            "url": "https://en.wikipedia.org/wiki/Abir_Muhaisen"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "currentVersion": 1,
+            "latest": 769378398,
+            "revision": 769378398,
+            "timestamp": "1489032056",
+            "title": "Elysian Valley, Los Angeles",
+            "type": "article",
+            "url": "https://en.wikipedia.org/wiki/Elysian_Valley,_Los_Angeles"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "currentVersion": 1,
+            "latest": 838595135,
+            "revision": 838595135,
+            "timestamp": "1524877815",
+            "title": "Voxtrot (album)",
+            "type": "article",
+            "url": "https://en.wikipedia.org/wiki/Voxtrot_(album)"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "currentVersion": 1,
+            "latest": 848636533,
+            "revision": 848636533,
+            "timestamp": "1530603914",
+            "title": "English honorifics",
+            "type": "article",
+            "url": "https://en.wikipedia.org/wiki/English_honorifics"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "currentVersion": 1,
+            "latest": 840509340,
+            "revision": 840509340,
+            "timestamp": "1525948766",
+            "title": "P. V. Abdul Wahab",
+            "type": "article",
+            "url": "https://en.wikipedia.org/wiki/P._V._Abdul_Wahab"
+        }
+    ],
+    "licenses": [
+        {
+            "mw_rights_icon": "//creativecommons.org/images/public/somerights20.png",
+            "mw_rights_text": "Creative Commons Attribution-Share Alike 3.0",
+            "mw_rights_url": "//creativecommons.org/licenses/by-sa/3.0/",
+            "name": "License",
+            "type": "license"
+        }
+    ],
+    "settings": [],
+    "subtitle": "",
+    "summary": "",
+    "title": "",
+    "type": "collection",
+    "version": 1,
+    "wikis": [
+        {
+            "baseurl": "https://en.wikipedia.org/w",
+            "format": "nuwiki",
+            "restbase1": "http://restbase.discovery.wmnet:7231/en.wikipedia.org/v1/",
+            "script_extension": ".php",
+            "type": "wikiconf"
+        },
+        {
+            "baseurl": "https://en.wikipedia.org/w",
+            "imagesize": 1200,
+            "keep_tmpfiles": false,
+            "output": "/home/wmfup/cache/37/377422eaaa2123e0/collection.zip",
+            "script_extension": ".php",
+            "status_file": "qserve://localhost:14311/377422eaaa2123e0:makezip",
+            "type": "wikiconf"
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "items": [
+        {
+            "content_type": "text/x-wiki",
+            "title": "Mainz",
+            "type": "article"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "title": "Wiesbaden",
+            "type": "article"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "title": "Limburg an der Lahn",
+            "type": "article"
+        },
+        {
+            "content_type": "text/x-wiki",
+            "title": "Saulheim",
+            "type": "article"
+        }
+    ],
+    "licenses": [
+        {
+            "mw_license_url": "http://de.wikipedia.org/w/index.php?title=Hilfe:Buchfunktion/Lizenz&action=raw",
+            "type": "license"
+        }
+    ],
+    "summary": "",
+    "type": "collection",
+    "version": 1,
+    "wikis": [
+        {
+            "baseurl": "http://de.wikipedia.org/w/",
+            "imagesize": 1200,
+            "keep_tmpfiles": false,
+            "output": "samples/local_cities.zip",
+            "script_extension": ".php",
+            "type": "wikiconf"
+        }
+    ]
+}

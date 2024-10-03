@@ -1,0 +1,198 @@
+{
+    "columns": "2",
+    "items": [
+        {
+            "items": [
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 838278089,
+                    "revision": 838278089,
+                    "timestamp": "1524705713",
+                    "title": "Amphibious aircraft",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Amphibious_aircraft"
+                }
+            ],
+            "title": "Overview",
+            "type": "chapter"
+        },
+        {
+            "items": [
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 825536311,
+                    "revision": 825536311,
+                    "timestamp": "1518564462",
+                    "title": "Floatplane",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Floatplane"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 843612683,
+                    "revision": 843612683,
+                    "timestamp": "1527668703",
+                    "title": "Flying boat",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Flying_boat"
+                }
+            ],
+            "title": "Related types of aircraft",
+            "type": "chapter"
+        },
+        {
+            "items": [
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 850098624,
+                    "revision": 850098624,
+                    "timestamp": "1531497828",
+                    "title": "Propeller",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Propeller"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 850131747,
+                    "revision": 850131747,
+                    "timestamp": "1531513596",
+                    "title": "Turboprop",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Turboprop"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 851005158,
+                    "revision": 851005158,
+                    "timestamp": "1532003757",
+                    "title": "Wing configuration",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Wing_configuration"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 848741957,
+                    "revision": 848741957,
+                    "timestamp": "1530664297",
+                    "title": "Lift-to-drag ratio",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Lift-to-drag_ratio"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 850827417,
+                    "revision": 850827417,
+                    "timestamp": "1531893655",
+                    "title": "Thrust",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Thrust"
+                }
+            ],
+            "title": "Technical Aspects",
+            "type": "chapter"
+        },
+        {
+            "items": [
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 833186723,
+                    "revision": 833186723,
+                    "timestamp": "1522381819",
+                    "title": "Grumman J2F Duck",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Grumman_J2F_Duck"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 840652344,
+                    "revision": 840652344,
+                    "timestamp": "1526024526",
+                    "title": "Shin Meiwa US-1A",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Shin_Meiwa_US-1A"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 843135094,
+                    "revision": 843135094,
+                    "timestamp": "1527391452",
+                    "title": "Lake Aircraft",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Lake_Aircraft"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 839368767,
+                    "revision": 839368767,
+                    "timestamp": "1525306681",
+                    "title": "Consolidated PBY Catalina",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Consolidated_PBY_Catalina"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 836144764,
+                    "revision": 836144764,
+                    "timestamp": "1523573321",
+                    "title": "Kawanishi H6K",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Kawanishi_H6K"
+                }
+            ],
+            "title": "Selected Amphibious Aircrafts",
+            "type": "chapter"
+        }
+    ],
+    "licenses": [
+        {
+            "mw_rights_icon": "//creativecommons.org/images/public/somerights20.png",
+            "mw_rights_text": "Creative Commons Attribution-Share Alike 3.0",
+            "mw_rights_url": "//creativecommons.org/licenses/by-sa/3.0/",
+            "name": "License",
+            "type": "license"
+        }
+    ],
+    "papersize": "a4",
+    "settings": {
+        "columns": "2",
+        "papersize": "a4",
+        "toc": "auto"
+    },
+    "subtitle": "... a short overview",
+    "summary": "",
+    "title": "Amphibious Aircraft",
+    "toc": "auto",
+    "type": "collection",
+    "version": 1,
+    "wikis": [
+        {
+            "baseurl": "https://en.wikipedia.org/w",
+            "format": "nuwiki",
+            "restbase1": "http://restbase.discovery.wmnet:7231/en.wikipedia.org/v1/",
+            "script_extension": ".php",
+            "type": "wikiconf"
+        },
+        {
+            "baseurl": "https://en.wikipedia.org/w",
+            "imagesize": 1200,
+            "keep_tmpfiles": false,
+            "output": "/home/wmfup/cache/9b/9be4cd119e2da439/collection.zip",
+            "script_extension": ".php",
+            "status_file": "qserve://localhost:14311/9be4cd119e2da439:makezip",
+            "type": "wikiconf"
+        }
+    ]
+}

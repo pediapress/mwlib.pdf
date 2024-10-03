@@ -1,0 +1,136 @@
+{
+    "columns": "2",
+    "items": [
+        {
+            "items": [
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 851655956,
+                    "revision": 851655956,
+                    "timestamp": "1532371640",
+                    "title": "Arabic alphabet",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Arabic_alphabet"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 853569814,
+                    "revision": 853569814,
+                    "timestamp": "1533491642",
+                    "title": "Bengali alphabet",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Bengali_alphabet"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 843659260,
+                    "revision": 843659260,
+                    "timestamp": "1527696188",
+                    "title": "Chinese script styles",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Chinese_script_styles"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 855232493,
+                    "revision": 855232493,
+                    "timestamp": "1534452664",
+                    "title": "Hebrew language",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Hebrew_language"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 850061134,
+                    "revision": 850061134,
+                    "timestamp": "1531475966",
+                    "title": "Iotation",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Iotation"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 854716999,
+                    "revision": 854716999,
+                    "timestamp": "1534150647",
+                    "title": "Malayalam",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Malayalam"
+                }
+            ],
+            "title": "Internationalization",
+            "type": "chapter"
+        },
+        {
+            "items": [
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 854214255,
+                    "revision": 854214255,
+                    "timestamp": "1533840137",
+                    "title": "Maxwell's equations",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Maxwell%27s_equations"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": 854127940,
+                    "revision": 854127940,
+                    "timestamp": "1533788343",
+                    "title": "Schr\u00f6dinger equation",
+                    "type": "article",
+                    "url": "https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation"
+                }
+            ],
+            "title": "Math Formulas",
+            "type": "chapter"
+        }
+    ],
+    "licenses": [
+        {
+            "mw_rights_icon": "//creativecommons.org/images/public/somerights20.png",
+            "mw_rights_text": "Creative Commons Attribution-Share Alike 3.0",
+            "mw_rights_url": "//creativecommons.org/licenses/by-sa/3.0/",
+            "name": "License",
+            "type": "license"
+        }
+    ],
+    "papersize": "a4",
+    "settings": {
+        "columns": "2",
+        "papersize": "a4",
+        "toc": "auto"
+    },
+    "subtitle": "Test collection",
+    "summary": "",
+    "title": "Internationalization and Math",
+    "toc": "auto",
+    "type": "collection",
+    "version": 1,
+    "wikis": [
+        {
+            "baseurl": "https://en.wikipedia.org/w",
+            "format": "nuwiki",
+            "restbase1": "http://restbase.discovery.wmnet:7231/en.wikipedia.org/v1/",
+            "script_extension": ".php",
+            "type": "wikiconf"
+        },
+        {
+            "baseurl": "https://en.wikipedia.org/w",
+            "imagesize": 1200,
+            "keep_tmpfiles": false,
+            "output": "/home/wmfup/cache/46/46ad624cfabb798b/collection.zip",
+            "script_extension": ".php",
+            "status_file": "qserve://localhost:14311/46ad624cfabb798b:makezip",
+            "type": "wikiconf"
+        }
+    ]
+}

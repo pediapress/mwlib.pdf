@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "content_type": "text/x-wiki",
+            "title": "Chemical element",
+            "type": "article"
+        }
+    ],
+    "licenses": [
+        {
+            "mw_license_url": "http://en.wikipedia.org/w/index.php?title=Help:Books/License&action=raw",
+            "type": "license"
+        }
+    ],
+    "summary": "",
+    "type": "collection",
+    "version": 1,
+    "wikis": [
+        {
+            "baseurl": "http://en.wikipedia.org/w/",
+            "imagesize": 1200,
+            "keep_tmpfiles": false,
+            "output": "element.zip",
+            "script_extension": ".php",
+            "type": "wikiconf"
+        }
+    ]
+}

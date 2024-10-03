@@ -1,0 +1,475 @@
+{
+    "columns": "2",
+    "items": [
+        {
+            "content_type": "text/x-wiki",
+            "currentVersion": 1,
+            "latest": "7238209",
+            "revision": "7238209",
+            "timestamp": "1518001996",
+            "title": "The Nether World",
+            "type": "article",
+            "url": "https://en.wikisource.org/wiki/The_Nether_World"
+        },
+        {
+            "items": [
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7274614",
+                    "revision": "7274614",
+                    "timestamp": "1519951026",
+                    "title": "The Nether World/Volume 1/Chapter 1",
+		    "displaytitle": "A Thrall of Thralls",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_1"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7241000",
+                    "revision": "7241000",
+                    "timestamp": "1518137944",
+                    "title": "The Nether World/Volume 1/Chapter 2",
+		    "displaytitle": "A Friend in Request",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_2"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238083",
+                    "revision": "7238083",
+                    "timestamp": "1517996033",
+                    "title": "The Nether World/Volume 1/Chapter 3",
+		    "displaytitle": "A Superfluous Family",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_3"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238085",
+                    "revision": "7238085",
+                    "timestamp": "1517996036",
+                    "title": "The Nether World/Volume 1/Chapter 4",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_4"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7241168",
+                    "revision": "7241168",
+                    "timestamp": "1518142654",
+                    "title": "The Nether World/Volume 1/Chapter 5",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_5"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238089",
+                    "revision": "7238089",
+                    "timestamp": "1517996044",
+                    "title": "The Nether World/Volume 1/Chapter 6",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_6"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238091",
+                    "revision": "7238091",
+                    "timestamp": "1517996048",
+                    "title": "The Nether World/Volume 1/Chapter 7",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_7"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238106",
+                    "revision": "7238106",
+                    "timestamp": "1517996143",
+                    "title": "The Nether World/Volume 1/Chapter 8",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_8"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238103",
+                    "revision": "7238103",
+                    "timestamp": "1517996089",
+                    "title": "The Nether World/Volume 1/Chapter 9",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_9"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238101",
+                    "revision": "7238101",
+                    "timestamp": "1517996085",
+                    "title": "The Nether World/Volume 1/Chapter 10",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_10"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238099",
+                    "revision": "7238099",
+                    "timestamp": "1517996082",
+                    "title": "The Nether World/Volume 1/Chapter 11",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_11"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238097",
+                    "revision": "7238097",
+                    "timestamp": "1517996077",
+                    "title": "The Nether World/Volume 1/Chapter 12",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_12"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7241244",
+                    "revision": "7241244",
+                    "timestamp": "1518148670",
+                    "title": "The Nether World/Volume 1/Chapter 13",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_1/Chapter_13"
+                }
+            ],
+            "title": "Volume 1",
+            "type": "chapter"
+        },
+        {
+            "items": [
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "5499151",
+                    "revision": "5499151",
+                    "timestamp": "1435710556",
+                    "title": "The Nether World/Volume 2/Chapter 1",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_1"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "5564577",
+                    "revision": "5564577",
+                    "timestamp": "1438821746",
+                    "title": "The Nether World/Volume 2/Chapter 2",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_2"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "5619544",
+                    "revision": "5619544",
+                    "timestamp": "1439701445",
+                    "title": "The Nether World/Volume 2/Chapter 3",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_3"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "5643219",
+                    "revision": "5643219",
+                    "timestamp": "1440571301",
+                    "title": "The Nether World/Volume 2/Chapter 4",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_4"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "5673315",
+                    "revision": "5673315",
+                    "timestamp": "1441254844",
+                    "title": "The Nether World/Volume 2/Chapter 5",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_5"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "5733778",
+                    "revision": "5733778",
+                    "timestamp": "1443770185",
+                    "title": "The Nether World/Volume 2/Chapter 6",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_6"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "5972905",
+                    "revision": "5972905",
+                    "timestamp": "1447891316",
+                    "title": "The Nether World/Volume 2/Chapter 7",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_7"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6074352",
+                    "revision": "6074352",
+                    "timestamp": "1453173464",
+                    "title": "The Nether World/Volume 2/Chapter 8",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_8"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6086812",
+                    "revision": "6086812",
+                    "timestamp": "1453866853",
+                    "title": "The Nether World/Volume 2/Chapter 9",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_9"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6130664",
+                    "revision": "6130664",
+                    "timestamp": "1456719566",
+                    "title": "The Nether World/Volume 2/Chapter 10",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_10"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6181822",
+                    "revision": "6181822",
+                    "timestamp": "1460090847",
+                    "title": "The Nether World/Volume 2/Chapter 11",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_11"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6231326",
+                    "revision": "6231326",
+                    "timestamp": "1463119503",
+                    "title": "The Nether World/Volume 2/Chapter 12",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_12"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6297245",
+                    "revision": "6297245",
+                    "timestamp": "1466780208",
+                    "title": "The Nether World/Volume 2/Chapter 13",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_13"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6355563",
+                    "revision": "6355563",
+                    "timestamp": "1469502939",
+                    "title": "The Nether World/Volume 2/Chapter 14",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_2/Chapter_14"
+                }
+            ],
+            "title": "Volume 2",
+            "type": "chapter"
+        },
+        {
+            "items": [
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6390649",
+                    "revision": "6390649",
+                    "timestamp": "1471252647",
+                    "title": "The Nether World/Volume 3/Chapter 1",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_1"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6501551",
+                    "revision": "6501551",
+                    "timestamp": "1478067344",
+                    "title": "The Nether World/Volume 3/Chapter 2",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_2"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6545873",
+                    "revision": "6545873",
+                    "timestamp": "1481000603",
+                    "title": "The Nether World/Volume 3/Chapter 3",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_3"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6619302",
+                    "revision": "6619302",
+                    "timestamp": "1484887466",
+                    "title": "The Nether World/Volume 3/Chapter 4",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_4"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6619303",
+                    "revision": "6619303",
+                    "timestamp": "1484887485",
+                    "title": "The Nether World/Volume 3/Chapter 5",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_5"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "6875984",
+                    "revision": "6875984",
+                    "timestamp": "1497938724",
+                    "title": "The Nether World/Volume 3/Chapter 6",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_6"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7063107",
+                    "revision": "7063107",
+                    "timestamp": "1509350871",
+                    "title": "The Nether World/Volume 3/Chapter 7",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_7"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7068716",
+                    "revision": "7068716",
+                    "timestamp": "1509803834",
+                    "title": "The Nether World/Volume 3/Chapter 8",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_8"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7126059",
+                    "revision": "7126059",
+                    "timestamp": "1513576902",
+                    "title": "The Nether World/Volume 3/Chapter 9",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_9"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7197641",
+                    "revision": "7197641",
+                    "timestamp": "1515973950",
+                    "title": "The Nether World/Volume 3/Chapter 10",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_10"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238114",
+                    "revision": "7238114",
+                    "timestamp": "1517996836",
+                    "title": "The Nether World/Volume 3/Chapter 11",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_11"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238116",
+                    "revision": "7238116",
+                    "timestamp": "1517996883",
+                    "title": "The Nether World/Volume 3/Chapter 12",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_12"
+                },
+                {
+                    "content_type": "text/x-wiki",
+                    "currentVersion": 1,
+                    "latest": "7238112",
+                    "revision": "7238112",
+                    "timestamp": "1517996632",
+                    "title": "The Nether World/Volume 3/Chapter 13",
+                    "type": "article",
+                    "url": "https://en.wikisource.org/wiki/The_Nether_World/Volume_3/Chapter_13"
+                }
+            ],
+            "title": "Volume 3",
+            "type": "chapter"
+        }
+    ],
+    "licenses": [
+        {
+            "mw_rights_icon": "//creativecommons.org/images/public/somerights20.png",
+            "mw_rights_text": "Creative Commons Attribution-Share Alike 3.0",
+            "mw_rights_url": "//creativecommons.org/licenses/by-sa/3.0/",
+            "name": "License",
+            "type": "license"
+        }
+    ],
+    "papersize": "a4",
+    "settings": {
+        "columns": "2",
+        "papersize": "a4",
+        "toc": "auto"
+    },
+    "subtitle": "",
+    "summary": "",
+    "title": "The Nether World",
+    "toc": "auto",
+    "type": "collection",
+    "version": 1,
+    "wikis": [
+        {
+            "baseurl": "https://en.wikisource.org/w",
+            "format": "nuwiki",
+            "restbase1": "http://restbase.discovery.wmnet:7231/en.wikisource.org/v1/",
+            "script_extension": ".php",
+            "type": "wikiconf"
+        },
+        {
+            "baseurl": "https://en.wikisource.org/w",
+            "imagesize": 1200,
+            "keep_tmpfiles": false,
+            "output": "/home/wmfup/cache/51/5146d00879ad55c2/collection.zip",
+            "script_extension": ".php",
+            "status_file": "qserve://localhost:14311/5146d00879ad55c2:makezip",
+            "type": "wikiconf"
+        }
+    ]
+}
