@@ -4,27 +4,52 @@
 #
 #    pip-compile requirements.in
 #
-apipkg==1.5               # via mwlib
-bottle==0.12.17           # via mwlib
+apipkg==1.5
+    # via mwlib
+bottle==0.12.17
+    # via mwlib
 cssutils==1.0.2
-gevent==1.4.0             # via mwlib
-greenlet==0.4.15          # via gevent
+    # via -r requirements.in
+gevent==1.4.0
+    # via mwlib
+greenlet==0.4.15
+    # via gevent
 libsass==0.19.4
+    # via -r requirements.in
 lxml==4.4.1
+    # via
+    #   -r requirements.in
+    #   mwlib
 mwlib==0.16.2
-odfpy==0.9.6              # via mwlib
+    # via -r requirements.in
+odfpy==0.9.6
+    # via mwlib
 pillow==6.2.1
-py==1.8.0                 # via mwlib
+    # via
+    #   -r requirements.in
+    #   mwlib
+py==1.10.0
+    # via mwlib
 pycountry==19.8.18
-pyparsing==1.5.7          # via mwlib
-pypdf==1.13               # via mwlib
-qserve==0.2.8             # via mwlib
-roman==3.2                # via mwlib
-simplejson==3.17.0        # via mwlib
-six==1.13.0               # via libsass
-sqlite3dbm==0.1.4         # via mwlib
-timelib==0.2.4            # via mwlib
+    # via -r requirements.in
+pyparsing==1.5.7
+    # via mwlib
+pypdf==1.13
+    # via mwlib
+qserve==0.2.8
+    # via mwlib
+roman==3.2
+    # via mwlib
+simplejson==3.17.0
+    # via mwlib
+six==1.13.0
+    # via libsass
+sqlite3dbm==0.1.4
+    # via mwlib
+timelib==0.2.4
+    # via mwlib
 tinycss==0.4
+    # via -r requirements.in
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
